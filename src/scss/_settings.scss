@@ -1,0 +1,171 @@
+// TO DO
+// - Get set of images for parallax backgrounds
+// - Create state for burger menu open, make X its own component as well as actual menu.
+// - Burger menu
+// - Write content for each section
+// - Remake header so it is laid out burger - logo, and add social icons into burger menu
+// - Make copy of App.vue BEFORE INSTALLING ROUTER!
+
+// NOTES
+// - palette-- class can be used to provide contrasting colours for whatever section. Reference the colours listed at top when populating!
+// - make notes on:
+//  	- the svg loader
+//		- sass functions map-has-key, @if, @each; creating variables and return
+//		- creating css variables with export to enable access in JS (for breakpoints.)
+// 		- currently have breakpoints defined in main js for vue-mq and also in settings for sass. How to get around this? Write mixin to be @included?
+
+
+// Typography -------------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$heading-font-family: "Pacifico", cursive;
+$base-font-weight: 300;
+$base-font-color: #000000;
+$base-font-size: 10;
+
+
+// Colors ===================
+$mainGold: rgba(255, 136, 0, 1);
+$offWhite: rgb(233, 233, 233);
+$almostBlack: rgba(20, 20, 20, 1);
+$white: #FFFFFF;
+$black: #000000;
+
+// Quote names to avoid color interpolation: https://github.com/sass/sass/issues/1256
+
+$palettes: (
+	'footer': (
+		base: red,
+		contrast: white
+	),
+	'btn': (
+		base: red,
+		contrast: white
+	),
+	'link': (
+		base: 'primary',
+		contrast: 'white'
+	),
+	'form-error': (
+		base: #FF3333,
+		contrast: 'white'
+	),
+	'form-warning': (
+		base: #FEF036,
+		contrast: 'white'
+	),
+	'form-success': (
+		base: 'font',
+		contrast: 'white'
+	)
+);
+
+@each $palette, $values in $palettes {
+	@if(map-has-key($values, base)) {
+		.palette--#{$palette} {
+			background-color: map-get($values, base);
+			&:hover {
+				background-color: map-get($values, contrast);
+			}
+		}
+	}
+}
+
+
+// Limits ================================
+
+$min-width: 320px;
+$page-width: 1500px;
+$page-padding: 56px;
+$page-padding-reduce: (
+	mob: 24,
+	tab: 40,
+	desk: 56,
+);
+
+// Breakpoints =================
+// Same values used in main.js for vue-mq
+$breakpoint-max-width: 1500px;
+$breakpoint-desk: 1440px;
+$breakpoint-ltab: 1024px;
+$breakpoint-ptab: 767px;
+$breakpoint-mob: 480px;
+
+
+// Header =======================
+
+$logo-width: 100px;
+$logo-width-small: $logo-width / 2;
+$logo-padding: 16px;
+$logo-padding-small: $logo-padding / 2;
+
+$header-height: 80px;
+$header-height-small: 64px;
+
+
+// Animations =======================
+
+$base-trans-speed: 0.25;
+
+
+// Grids ========================
+
+$grid-gutter: 20;
+
+
+// Panels ========================
+
+$panel-padding: 250;
+
+
+// Buttons ========================
+
+$btn-height: 60;
+$btn-edge-h-spacing: 20;
+$btn-min-v-spacing: 5;
+$btn-font-size: 12;
+$btn-fill-color: btn;
+$btn-border-width: 2;
+
+
+// Forms ========================
+
+// Field ----------
+$field-font-size: 25;
+$field-height: 53;
+$field-padding: 0;
+$field-bg-color: transparent;
+$field-placeholder-color: $base-font-color;
+$field-border-width: 2;
+$field-border-color: transparent;
+
+// Textarea ----------
+$textarea-rows: 4;
+
+// Checkbox ----------
+$checkbox-width: 17;
+$checkbox-spacing: 12;
+$checkbox-selected-font-size: 10;
+
+
+// CSS Variables
+$css-variables: (
+	base-font-weight: #{$base-font-weight},
+);
+
+.page-container {
+	max-width: $page-width;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+// Initialise
+body {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+}
