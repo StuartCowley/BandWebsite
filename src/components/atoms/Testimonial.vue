@@ -5,17 +5,15 @@
 				<div class="grid__item one-half">
 					<div class="testimonial-wrap">
 						<div class="testimonial__content">
-							The Bees Knees were amazing, a highlight of the day for me. They played the best songs and I was so impressed with their version of Etta James ‘At Last’ it was such a beautiful moment for me and my husband.
+							<slot name="quote"></slot>
 						</div>
 						<div class="testimonial__attribution">
-							- Elaine M, 2019
+							<slot name="attribution"></slot>
 						</div>
 					</div>
 				</div>
 				<div class="grid__item one-half">
-					<div class="testimonial__image">
-
-					</div>
+					<div class="testimonial__image" :style="{backgroundImage: `url(${image})` }"></div>
 				</div>
 			</div>
 		</div>
@@ -30,6 +28,14 @@ export default {
 		reverse: {
 			type: Boolean,
 			default: false,
+		},
+		bgImage: {
+			type: String,
+		},
+	},
+	computed: {
+		image() {
+			return require(`../../assets/${this.bgImage}`)
 		}
 	}
 }
@@ -74,7 +80,6 @@ $c:'.testimonial';
 		color: yellow;
 	}
 	&__image {
-		background-image: url('../../assets/pic5.jpg');
 		background-size: cover;
 		&::before {
 			content: '';

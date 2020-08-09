@@ -35,7 +35,14 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial />
+			<Testimonial bgImage="bride-1.jpg">
+				<template v-slot:quote>
+					The Bees Knees were amazing, a highlight of the day for me. They played the best songs and I was so impressed with their version of Etta James ‘At Last’ it was such a beautiful moment for me and my husband.
+				</template>
+				<template v-slot:attribution>
+					- Elaine M, 2019
+				</template>
+			</Testimonial>
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg2">
 			<div class="page-container">
@@ -54,7 +61,14 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial :reverse="true" />
+			<Testimonial :reverse="true" bgImage="bride-2.jpg">
+				<template v-slot:quote>
+					AMAZING!! This band were absolutely incredible. We picked the Bees Knees because of Lauren’s voice and their varied set list. They exceeded all expectations and kept our wedding dancing all night. All the guests said what an amazing band we had and they really helped make our wedding so wonderful. They happily learnt our first dance song and even played requests from guests. I can not recommend this band enough and 5 stars doesn’t seem to do them justice. Thank you Bees Knees!!
+				</template>
+				<template v-slot:attribution>
+					- Philip S, 2019
+				</template>
+			</Testimonial>
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg3">
 			<div class="page-container">
@@ -78,7 +92,14 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial />
+			<Testimonial bgImage="crowd.jpg">
+				<template v-slot:quote>
+					Absolutely fantastic from start to finish! They entertained on four different nights for us for a total of 32 different groups , and the feedback from all was outstanding! Not only would I recommend these guys but would have them back in a heartbeat! Awesome !
+				</template>
+				<template v-slot:attribution>
+					- Donald B, 2019
+				</template>
+			</Testimonial>
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg4">
 			<div class="page-container">
@@ -113,6 +134,7 @@ export default {
 	},
 	data () {
 		return {
+			bride: require('../../assets/bride-1.jpg')
 		}
 	},
 	props: {

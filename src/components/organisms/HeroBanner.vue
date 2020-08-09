@@ -17,7 +17,7 @@
 				</div>
 				<div class="cta-wrap">
 					<div class="cta">
-						<CTA :label="'Book Now'" />
+						<CTA :label="'Enquire Now'" />
 					</div>
 				</div>
 			</div>
