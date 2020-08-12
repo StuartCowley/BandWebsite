@@ -79,10 +79,14 @@ $c: ".hero-banner";
 		// }
 		.title {
 			@include heading;
-			color: $offWhite;
-			letter-spacing: 0.5rem;
+			letter-spacing: 0.8rem;
 			line-height: 1.7;
 			margin-bottom: 24px;
+			font-size: 4rem;
+			font-weight: bold;
+			@media screen and (max-width: $breakpoint-mob) {
+				font-size: 3.2rem;
+			}
 			span {
 				display: block;
 				text-align: center;

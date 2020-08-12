@@ -3,18 +3,17 @@
 		<HeroBanner class="parallax-body__section parallax-body__section--parallax" />
 		<div class="parallax-body__section parallax-body__section--static">
 			<div class="page-container">
-
 				<div class="parallax-body__intro-panel">
-					<div class="title">
-						Manchester based professional party band playing pop, rock, motown, ska and more, available for all your event needs
-					</div>
+					Versatile professional party band dedicated to making your event amazing. From London to Glasgow we have been thrilling audiences with our covers from pop, rock, Motown, ska and much much more. Available for all your event needs
 				</div>
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg1">
 			<div class="page-container">
-				<Panel heading="About The Band">
-					<ul>
+				<Panel heading="About The Band" class="">
+					The Bee Knees formed in 2018 by a group of fun loving musicians with decades of experience in everything from function bands to orchestras.
+					We have travelled across the British Isles and our goal is to create the best most energetic parties for our clients and have a blast at the same time.
+					<!-- <ul>
 						<li>
 							All sound and lighting equipment provided
 						</li>
@@ -30,7 +29,7 @@
 						<li>
 							DJ service available, we take care of everything!
 						</li>
-					</ul>
+					</ul> -->
 				</Panel>
 			</div>
 		</div>
@@ -163,23 +162,31 @@ export default {
 
 		&__intro-panel {
 			text-align: center;
-			.title {
-				@include heading;
-				font-family: 'Montserrat';
-				color: $mainGold;
+			font-family: 'Montserrat';
+			color: $mainGold;
+			font-size: 2.4rem;
+			@media screen and (max-width: $breakpoint-ptab) {
+				font-size: 1.4rem;
 			}
 		}
 
 		&__section {
 			position: relative;
 			height: 100%;
-
-			/* For text formatting. */
 			color: white;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			&--parallax::after {
+			&--parallax {
+				.page-container {
+					padding-left: 4rem;
+					padding-right: 4rem;
+					@media screen and (max-width: $breakpoint-mob){
+						padding-left: 1rem;
+						padding-right: 1rem;
+					}
+				}
+				&::after {
 				content: "";
 				position: absolute;
 				top: 0;
@@ -190,6 +197,7 @@ export default {
 				background-repeat: no-repeat;
 				background-size: cover;
 				z-index: -1;
+				}
 			}
 			&--static {
 				height: 65%;
