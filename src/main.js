@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueMq from 'vue-mq'
 import App from './App.vue'
+import Store from './store/index'
 
 Vue.use(VueMq, {
 	breakpoints: {
@@ -15,5 +16,6 @@ Vue.use(VueMq, {
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+	render: h => h(App),
+	Store,
 }).$mount('#app')
