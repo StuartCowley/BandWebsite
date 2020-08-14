@@ -8,13 +8,19 @@ export default new Vuex.Store({
 		appInitialised: false
 	},
 	mutations: {
+		showLoadScreen(state) {
+			state.appInitialised = false
+		},
 		appLoaded(state) {
 			state.appInitialised = true
 		}
 	},
 	actions: {
+		showLoadScreen({commit}) {
+			commit('showLoadScreen')
+		},
+		appLoaded({commit}) {
+			commit('appLoaded')
+		},
 	},
-	getters: {
-
-	}
 })

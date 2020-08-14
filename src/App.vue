@@ -17,7 +17,6 @@
 <script>
 import Header from './components/organisms/Header.vue'
 import ParallaxBody from './components/molecules/ParallaxBody.vue'
-import Store from './store/index.js'
 
 export default {
 	name: 'App',
@@ -30,17 +29,15 @@ export default {
 	},
 	computed: {
 		initialised() {
-			return Store.state
+			return this.$store.state.appInitialised
 		}
+	},
+	created() {
+		this.$store.dispatch('showLoadScreen')
 	},
 	mounted: function() {
-		this.apploaded()
+		this.$store.dispatch('appLoaded')
 	},
-	methods: {
-		apploaded() {
-			Store.commit('appLoaded')
-		}
-	}
 }
 </script>
 
