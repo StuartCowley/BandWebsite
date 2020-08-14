@@ -62,7 +62,7 @@ $c:'.testimonial';
 	&__content {
 		color: orange;
 		margin-bottom: 1rem;
-		font-size: 1.6rem;
+		font-size: 1.4rem;
 		@media screen and (max-width: $breakpoint-mob) {
 			font-size: 0.8rem;
 		}
@@ -81,7 +81,6 @@ $c:'.testimonial';
 		}
 		&:after {
 			margin-top: -24px;
-			margin-left: -8px;
 		}
 	}
 	&__attribution {
@@ -104,13 +103,6 @@ $c:'.testimonial';
 			background-position: center;
 			width: auto;
 		}
-		// &-mask {
-		// 	opacity: 0.5;
-		// 	display: none;
-		// 	&--show {
-		// 		display: block;
-		// 	}
-		// }
 		&::before {
 			content: '';
 			display: block;

@@ -7,7 +7,11 @@
 				</div>
 			</div>
 			<div class="grid__item" :class="{'one-half': $mq == 'ltab' || $mq == 'desk'}">
-				<div class="panel__content" :class="{'panel__content--vertical': $mq == 'mob' || $mq == 'ptab' || $mq == 'max'}">
+				<div class="panel__content"
+				:class="{
+					'panel__content--vertical': $mq == 'mob' || $mq == 'ptab' || $mq == 'max',
+					'panel__content--list': isList
+					}">
 					<slot />
 				</div>
 			</div>
@@ -22,6 +26,10 @@ export default {
 	props: {
 		heading: {
 			type: String,
+		},
+		isList: {
+			type: Boolean,
+			default: false
 		}
 	}
 
@@ -34,9 +42,7 @@ export default {
 $c:'.panel';
 #{$c} {
 	padding-top: 24px;
-	// padding-right: 24px;
 	padding-bottom: 24px;
-	// padding-left: 24px;
 
 	&__heading {
 		@include heading;
@@ -58,15 +64,37 @@ $c:'.panel';
 	}
 	&__content {
 		border-radius: 40px;
-		padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 32px;
+    padding-right: 12px;
 		background-color: $almostBlack;
 		color: $mainGold;
 		@include copy;
 		&--vertical {
 			text-align: center;
+		}
+		ul {
+			list-style: none;
+			padding-left: 0;
+		}
+		&--list {
+			@media screen and (max-width: $breakpoint-ptab) {
+				padding-top: 12px;
+				padding-bottom: 12px;
+				padding-left: 12px;
+				padding-right: 12px;
+			}
+			li {
+				display: inline-block;
+				box-sizing: border-box;
+				width: 50%;
+				padding-right: 20px;
+				margin-bottom: 20px;
+				@media screen and (max-width: $breakpoint-ptab) {
+					width: 100%;
+				}
+			}
 		}
 	}
 }

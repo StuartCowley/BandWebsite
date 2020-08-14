@@ -10,7 +10,7 @@
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg1">
 			<div class="page-container">
-				<Panel heading="About The Band" class="">
+				<Panel heading="About The Band">
 					The Bee Knees formed in 2018 by a group of fun loving musicians with decades of experience in everything from function bands to orchestras.
 					We have travelled across the British Isles and our goal is to create the best most energetic parties for our clients and have a blast at the same time.
 					<!-- <ul>
@@ -45,7 +45,7 @@
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg2">
 			<div class="page-container">
-				<Panel class="is-list" heading="Available for:">
+				<Panel :isList="true" heading="Available for:">
 					<ul>
 						<li>Weddings</li>
 						<li>Wedding Proposals</li>
@@ -62,7 +62,7 @@
 		<div class="parallax-body__section parallax-body__section--static">
 			<Testimonial :reverse="true" bgImage="bride-2.jpg">
 				<template v-slot:quote>
-					AMAZING!! This band were absolutely incredible. We picked the Bees Knees because of Lauren’s voice and their varied set list. They exceeded all expectations and kept our wedding dancing all night. All the guests said what an amazing band we had and they really helped make our wedding so wonderful. They happily learnt our first dance song and even played requests from guests. I can not recommend this band enough and 5 stars doesn’t seem to do them justice. Thank you Bees Knees!!
+					AMAZING!! This band were absolutely incredible. We picked the Bees Knees because of Lauren’s voice and their varied set list. They exceeded all expectations and kept our wedding dancing all night. All the guests said what an amazing band we had and they really helped make our wedding so wonderful. They happily learnt our first dance song and even played requests from guests. Thank you Bees Knees!!
 				</template>
 				<template v-slot:attribution>
 					- Philip S, 2019
@@ -71,7 +71,7 @@
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg3">
 			<div class="page-container">
-				<Panel class="is-list" heading="Genres / Set options">
+				<Panel :isList="true" heading="Genres / Set options">
 					<ul>
 						<li>1950s to modern day</li>
 						<li>Rock/Pop</li>
@@ -108,7 +108,7 @@
 						<li>We provide all our own sound and lighting equipment</li>
 						<li>Custom tailored sets if requested</li>
 						<li>All equipment is PAT tested</li>
-						<li>Different line ups availbale to suit your budget and preference</li>
+						<li>Different line ups available to suit your budget and preference</li>
 					</ul>
 				</Panel>
 			</div>
@@ -204,23 +204,6 @@ export default {
 				overflow: hidden;
 				background: url('../../assets/blur-abstract-black-hexagon-mesh-pattern-background_33869-397.jpg');
 				background-size: 200%;
-			}
-			ul {
-					list-style: none;
-					padding-left: 0;
-				li {
-					display: block;
-					padding-right: 10%;
-					margin-bottom: 20px;
-				}
-			}
-			.is-list {
-				ul {
-					li {
-						display: inline-block;
-						width: 40%;
-					}
-				}
 			}
 		}
 
