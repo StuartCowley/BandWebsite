@@ -1,13 +1,13 @@
 <template>
 	<div class="header" :class="{'header--small': $mq == 'mob' || $mq == 'ptab'}">
-		<BurgerMenu :navOpen="navOpen" />
+		<BurgerMenu :navOpen="burgerOpen" />
 
 		<div class="page-container">
 
 			<div class="grid grid--middle grid--spread">
 
 				<div class="grid__item" :class="{'grid__item--hide': $mq == 'ltab' ||  $mq == 'desk' || $mq == 'max' }">
-					<BurgerNavCross @clickedBox="toggleNav" class="header__burger" :navOpen="navOpen" />
+					<BurgerNavCross @clickedBox="toggleNav" class="header__burger" :navOpen="burgerOpen" />
 				</div>
 
 				<div class="grid__item" :class="{'grid__item--hide': $mq == 'mob' ||  $mq == 'ptab' }">
@@ -54,16 +54,23 @@ import Logo from '../atoms/Logo.vue'
 
 export default {
 	name: "Header",
-	data() {
-		return {
-			navOpen: false
+	props: {
+		burgerOpen: {
+			type: Boolean,
+			default: false
 		}
 	},
 	methods: {
 		toggleNav() {
-			this.navOpen = !this.navOpen
+			this.$store.dispatch('toggleBurger')
 		}
 	},
+	// computed: {
+		// burgerOpen() {
+		// 	return this.$store.state.burgerOpen
+		// }
+	// },
+
 	components: {
 		SocialItem,
 		BurgerNavCross,
@@ -79,12 +86,12 @@ export default {
 $c: ".header";
 
 #{$c} {
-	z-index: 1;
+	z-index: 100;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	height: $header-height;
-	background-color: $almostBlack;
+	background-color: $black;
 
 	display: flex;
   align-items: center;
@@ -124,16 +131,20 @@ $c: ".header";
 			display: inline-flex;
 			margin-right: 20px;
 			font-size: 1.5rem;
+			transition: color $base-trans-speed ease-in-out;
+			&:hover {
+				color: $mainGold;
+			}
 			&::after {
 				content: '';
 				display: block;
-				background-color: #ff8800;
+				background-color: $mainGold;
 				width: 0%;
 				height: 2px;
 				position: absolute;
 				margin: auto;
 				bottom: 0;
-				transition: width 0.8s;
+				transition: width $base-trans-speed;
 			}
 			&:hover::after {
 				width: 100%;

@@ -1,12 +1,12 @@
 // TO DO
 // - Create state for burger menu open, make X its own component as well as actual menu.
-// - Burger menu
+// - Fix burger menu. Make whole thing position fixed and bring into screen on menu open to fix overflow bug?
 // - Write content for each section
 // - Remake header so it is laid out burger - logo, and add social icons into burger menu
 // - Make copy of App.vue BEFORE INSTALLING ROUTER!
 
 // NOTES
-// - palette-- class can be used to provide contrasting colours for whatever section. Reference the colours listed at top when populating!
+// - palette-- class can be used to provide contrasting colours for whatever element (text only, when mapped over it outputs a hover pseudo element too). Reference the colours listed at top when populating!
 // - make notes on:
 //		- sass functions map-has-key, @if, @each; creating variables and return
 //		- creating css variables with export to enable access in JS (for breakpoints.)
@@ -30,17 +30,9 @@ $white: #FFFFFF;
 $black: #000000;
 
 $palettes: (
-	// 'footer': (
-	// 	base: red,
-	// 	contrast: white
-	// ),
-	'btn': (
-		base: red,
-		contrast: white
-	),
 	'link': (
-		base: 'primary',
-		contrast: 'white'
+		base: $white,
+		contrast: $mainGold
 	),
 	'form-error': (
 		base: #FF3333,
@@ -59,9 +51,9 @@ $palettes: (
 @each $palette, $values in $palettes {
 	@if(map-has-key($values, base)) {
 		.palette--#{$palette} {
-			background-color: map-get($values, base);
+			color: map-get($values, base);
 			&:hover {
-				background-color: map-get($values, contrast);
+				color: map-get($values, contrast);
 			}
 		}
 	}
@@ -101,7 +93,8 @@ $header-height-small: 64px;
 
 // Animations =======================
 
-$base-trans-speed: 0.25;
+$base-trans-speed: 0.8s;
+
 
 
 // Grids ========================
@@ -163,5 +156,5 @@ $css-variables: (
 body {
 	margin: 0;
 	padding: 0;
-	background-color: black;
+	background-color: $black;
 }

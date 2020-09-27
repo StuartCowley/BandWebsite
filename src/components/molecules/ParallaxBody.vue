@@ -1,5 +1,5 @@
 <template>
-	<div class="parallax-body">
+	<div class="parallax-body" :class="{'parallax-body--frozen': burgerOpen}">
 		<HeroBanner class="parallax-body__section parallax-body__section--parallax" />
 		<div class="parallax-body__section parallax-body__section--static">
 			<div class="page-container">
@@ -119,9 +119,16 @@ export default {
 		}
 	},
 	props: {
+		burgerOpen: {
+			type: Boolean,
+			default: false,
+		}
 	},
-	computed: {
-	},
+	// computed: {
+	// 	burgerOpen() {
+	// 		return this.$store.state.burgerOpen
+	// 	}
+	// },
 	created: function()
 	{
 	},
@@ -141,6 +148,10 @@ export default {
 		overflow-x: hidden;
 		@include header--padding;
 		perspective: 2px;
+
+		&--frozen {
+			overflow: hidden;
+		}
 
 		&__intro-panel {
 			text-align: center;

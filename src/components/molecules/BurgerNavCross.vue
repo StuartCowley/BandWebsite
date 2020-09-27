@@ -1,9 +1,9 @@
 <template>
 	<div class="burger-nav-cross">
-		<input type="checkbox" @click="$emit('clickedBox')" />
-		<span :class="{'open': navOpen}"></span>
-		<span :class="{'open': navOpen}"></span>
-		<span :class="{'open': navOpen}"></span>
+		<input class="burger-nav-cross__input" type="checkbox" @click="$emit('clickedBox')" />
+		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
+		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
+		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
 	</div>
 </template>
 
@@ -31,7 +31,7 @@ $c:'.burger-nav-cross';
   -webkit-user-select: none;
 	user-select: none;
 
-	& span {
+	&__span {
 		display: block;
 		height: 4px;
 		margin-bottom: 4px;
@@ -40,9 +40,8 @@ $c:'.burger-nav-cross';
 		border-radius: 3px;
 		z-index: 1;
 		transform-origin: 4px 0px;
-		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-								background-color 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-								opacity 0.55s ease;
+		transition: transform $base-trans-speed*0.75 cubic-bezier(0.77,0.2,0.05,1.0),
+								opacity $base-trans-speed*0.75 ease;
 		&:last-of-type {
 			margin-bottom: 0;
 			transform-origin: 0% 50%;
@@ -50,20 +49,21 @@ $c:'.burger-nav-cross';
 		&:first-of-type {
 			transform-origin: 0% 0%;
 		}
-	}
-	.open {
-		background: $mainGold;
-		transform: rotate(45deg) translate(1px, -1px);
-		&:nth-of-type(2) {
-			transform: rotate(0deg) scale(0.2, 0.2);
-			opacity: 0;
+		&--open {
+			background: $mainGold;
+			transform: rotate(45deg) translate(1px, -1px);
+			&:nth-of-type(2) {
+				transform: rotate(0deg) scale(0.2, 0.2);
+				opacity: 0;
+			}
+			&:last-of-type {
+				transform: rotate(-45deg) translate(0, 0px);
+			}
 		}
-		&:last-of-type {
-			transform: rotate(-45deg) translate(0, 0px);
-		}
+
 	}
 
-	& input {
+	&__input {
 		display: block;
 		width: 100%;
 		height: 100%;

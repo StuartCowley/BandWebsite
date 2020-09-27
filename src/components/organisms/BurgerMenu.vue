@@ -1,10 +1,10 @@
 <template>
 	<div class="burger-menu" :class="{'burger-menu--open': navOpen}">
-		<ul class="menu-items">
-			<a href="#"><li class="item">Home</li></a>
-			<a href="#"><li class="item">About</li></a>
-			<a href="#"><li class="item">Info</li></a>
-			<a href="#"><li class="item">Contact</li></a>
+		<ul class="burger-menu__items">
+			<a href="#"><li class="burger-menu__item palette--link">Home</li></a>
+			<a href="#"><li class="burger-menu__item palette--link">About</li></a>
+			<a href="#"><li class="burger-menu__item palette--link">Info</li></a>
+			<a href="#"><li class="burger-menu__item palette--link">Contact</li></a>
 		</ul>
 	</div>
 </template>
@@ -28,20 +28,21 @@ $c:'.burger-menu';
 #{$c}{
 	position: fixed;
 	top: 0;
-	bottom: 0;
-	width: 300px;
-	background-color: $almostBlack;
-	color: red;
+	height: 100%;
+	width: 60%;
+	max-width: 280px;
+	min-width: 220px;
+	background-color: $black;
 	transform: translate(-100%, 0);
 	-webkit-user-select: none;
 	user-select: none;
-	transition: transform 500ms ease-in-out;
+	transition: transform $base-trans-speed*0.75 ease-in-out;
 
 	&--open {
 		transform: none;
 	}
 
-	.menu-items {
+	&__items {
 		position: relative;
 		padding-top: $header-height;
 		padding-left: 50px;
@@ -52,20 +53,14 @@ $c:'.burger-menu';
 		-webkit-font-smoothing: antialiased;
 		/* to stop flickering of text in safari */
 
-		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-		&-item {
-			padding: 10px 0;
-			font-size: 22px;
-		}
-		a {
-			text-decoration: none;
-			color: $mainGold;
-			transition: color 0.3s ease;
-			&:hover {
-				color: yellow;
-			}
-		}
+		transition: transform $base-trans-speed*0.75 cubic-bezier(0.77,0.2,0.05,1.0);
 	}
+	&__item {
+		transition: color $base-trans-speed ease;
+		padding: 10px 0;
+		font-size: 1.5rem;
+	}
+
 }
 
 </style>

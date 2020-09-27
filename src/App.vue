@@ -1,9 +1,12 @@
 <template>
 	<div class="page-wrapper">
-		<Header />
+		<Header :burgerOpen="burgerOpen" />
 
 		<template v-if="initialised">
-			<ParallaxBody />
+			<transition name="fade">
+				<div class="faded-background" v-show="burgerOpen"></div>
+			</transition>
+			<ParallaxBody :burgerOpen="burgerOpen" />
 		</template>
 
 		<template v-else>
@@ -30,6 +33,12 @@ export default {
 	computed: {
 		initialised() {
 			return this.$store.state.appInitialised
+		},
+		currentScreen() {
+			return this.$mq
+		},
+		burgerOpen() {
+			return this.$store.state.burgerOpen
 		}
 	},
 	created() {
@@ -38,6 +47,13 @@ export default {
 	mounted: function() {
 		this.$store.dispatch('appLoaded')
 	},
+	watch: {
+		currentScreen: function() {
+			if (this.$mq == 'ltab' || this.$mq == 'desk' || this.$mq == 'max') {
+				this.$store.dispatch('closeBurger')
+			}
+		}
+	}
 }
 </script>
 
@@ -50,8 +66,37 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+	overflow: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+.faded-background {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	opacity: 0.6;
+	background-color: black;
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity $base-trans-speed*1.25 ease-in-out;
+	}
+
 .page-wrapper {
 	position: relative;
+
 	.loading {
 		width: 100px;
 		height: 100px;

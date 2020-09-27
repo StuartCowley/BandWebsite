@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		appInitialised: false
+		appInitialised: false,
+		burgerOpen: false,
 	},
 	mutations: {
 		showLoadScreen(state) {
@@ -13,6 +14,12 @@ export default new Vuex.Store({
 		},
 		appLoaded(state) {
 			state.appInitialised = true
+		},
+		toggleBurger(state) {
+			state.burgerOpen = !state.burgerOpen
+		},
+		closeBurger(state) {
+			state.burgerOpen = false
 		}
 	},
 	actions: {
@@ -22,5 +29,11 @@ export default new Vuex.Store({
 		appLoaded({commit}) {
 			commit('appLoaded')
 		},
+		toggleBurger({commit}) {
+			commit('toggleBurger')
+		},
+		closeBurger({commit}) {
+			commit('closeBurger')
+		}
 	},
 })
