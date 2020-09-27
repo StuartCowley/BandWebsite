@@ -36,7 +36,7 @@ $c:'.burger-nav-cross';
 		height: 4px;
 		margin-bottom: 4px;
 		position: relative;
-		background: blue;
+		background: $mainGold;
 		border-radius: 3px;
 		z-index: 1;
 		transform-origin: 4px 0px;
@@ -52,7 +52,7 @@ $c:'.burger-nav-cross';
 		}
 	}
 	.open {
-		background: yellow;
+		background: $mainGold;
 		transform: rotate(45deg) translate(1px, -1px);
 		&:nth-of-type(2) {
 			transform: rotate(0deg) scale(0.2, 0.2);

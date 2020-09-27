@@ -13,23 +13,6 @@
 				<Panel heading="About The Band">
 					The Bee Knees formed in 2018 by a group of fun loving musicians with decades of experience in everything from function bands to orchestras.
 					We have travelled across the British Isles and our goal is to create the best most energetic parties for our clients and have a blast at the same time.
-					<!-- <ul>
-						<li>
-							All sound and lighting equipment provided
-						</li>
-						<li>
-							Available for all types of events all across the country
-						</li>
-						<li>
-							Bookings taken for various band line ups and can include two guitars, bass, saxophone, keyboards and drums
-						</li>
-						<li>
-							Available from solo acoustic to full five piece band as needed
-						</li>
-						<li>
-							DJ service available, we take care of everything!
-						</li>
-					</ul> -->
 				</Panel>
 			</div>
 		</div>
@@ -133,7 +116,6 @@ export default {
 	},
 	data () {
 		return {
-			bride: require('../../assets/bride-1.jpg')
 		}
 	},
 	props: {
@@ -173,7 +155,6 @@ export default {
 		&__section {
 			position: relative;
 			height: 100%;
-			color: white;
 			display: flex;
 			align-items: center;
 			justify-content: center;

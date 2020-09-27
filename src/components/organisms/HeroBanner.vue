@@ -71,6 +71,7 @@ $c: ".hero-banner";
 		position: absolute;
     bottom: 50%;
     transform: translateY(50%);
+		color: $offWhite;
     text-align: center;
     width: 100%;
     padding: 0 30px;
@@ -94,7 +95,7 @@ $c: ".hero-banner";
 		}
 		.subtitle {
 			font-size: 1.6rem;
-			color: $offWhite;
+			// color: $offWhite;
 			letter-spacing: 0.75rem;
 			margin-bottom: 32px;
 			@media screen and (max-width: $breakpoint-mob) {

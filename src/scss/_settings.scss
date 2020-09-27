@@ -1,5 +1,4 @@
 // TO DO
-// - Get set of images for parallax backgrounds
 // - Create state for burger menu open, make X its own component as well as actual menu.
 // - Burger menu
 // - Write content for each section
@@ -9,7 +8,6 @@
 // NOTES
 // - palette-- class can be used to provide contrasting colours for whatever section. Reference the colours listed at top when populating!
 // - make notes on:
-//  	- the svg loader
 //		- sass functions map-has-key, @if, @each; creating variables and return
 //		- creating css variables with export to enable access in JS (for breakpoints.)
 // 		- currently have breakpoints defined in main js for vue-mq and also in settings for sass. How to get around this? Write mixin to be @included?
@@ -31,13 +29,11 @@ $almostBlack: rgba(20, 20, 20, 1);
 $white: #FFFFFF;
 $black: #000000;
 
-// Quote names to avoid color interpolation: https://github.com/sass/sass/issues/1256
-
 $palettes: (
-	'footer': (
-		base: red,
-		contrast: white
-	),
+	// 'footer': (
+	// 	base: red,
+	// 	contrast: white
+	// ),
 	'btn': (
 		base: red,
 		contrast: white
