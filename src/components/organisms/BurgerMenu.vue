@@ -5,13 +5,22 @@
 			<a href="#"><li class="burger-menu__item palette--link">About</li></a>
 			<a href="#"><li class="burger-menu__item palette--link">Info</li></a>
 			<a href="#"><li class="burger-menu__item palette--link">Contact</li></a>
+			<div class="burger-menu__socials">
+				<SocialItem link="http://www.facebook.com" :logo="require('../../assets/icon-facebook.svg')" />
+				<SocialItem link="http://www.google.com" :logo="require('../../assets/icon-mail.svg')" />
+			</div>
 		</ul>
 	</div>
 </template>
 
 <script>
+import SocialItem from '../atoms/SocialItem'
+
 export default {
 	name: "BurgerMenu",
+	components: {
+		SocialItem
+	},
 	props: {
 		navOpen: {
 			type: Boolean,
@@ -59,6 +68,10 @@ $c:'.burger-menu';
 		transition: color $base-trans-speed ease;
 		padding: 10px 0;
 		font-size: 1.5rem;
+	}
+
+	&__socials {
+		padding-top: 10px;
 	}
 
 }

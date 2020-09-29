@@ -19,7 +19,7 @@
 
 <script>
 import Header from './components/organisms/Header.vue'
-import ParallaxBody from './components/molecules/ParallaxBody.vue'
+import ParallaxBody from './components/organisms/ParallaxBody.vue'
 
 export default {
 	name: 'App',

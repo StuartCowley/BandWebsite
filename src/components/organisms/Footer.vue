@@ -26,7 +26,6 @@
 
 				<div class="grid__item grid__item--auto ">
 					<div class="footer__logo-wrap">
-						<!-- <Logo /> -->
 						<div class="footer__logo" v-html="require('../../assets/bee.svg')"></div>
 						<div class="footer__logo-title">The Bees Knees</div>
 						<div class="footer__logo-subtitle">Professional Party Band</div>

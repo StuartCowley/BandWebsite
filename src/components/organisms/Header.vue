@@ -36,8 +36,8 @@
 
 				<div class="grid__item">
 					<div class="header__social-wrap">
-						<SocialItem class="header__social-item" link="http://www.facebook.com" :logo="require('../../assets/icon-facebook.svg')" />
-						<SocialItem class="header__social-item" link="http://www.google.com" :logo="require('../../assets/icon-mail.svg')" />
+						<SocialItem link="http://www.facebook.com" :logo="require('../../assets/icon-facebook.svg')" />
+						<SocialItem link="http://www.google.com" :logo="require('../../assets/icon-mail.svg')" />
 					</div>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 <script>
 import SocialItem from '../atoms/SocialItem.vue'
 import BurgerMenu from './BurgerMenu.vue'
-import BurgerNavCross from '../molecules/BurgerNavCross.vue'
+import BurgerNavCross from '../atoms/BurgerNavCross.vue'
 import Logo from '../atoms/Logo.vue'
 
 export default {
@@ -65,11 +65,6 @@ export default {
 			this.$store.dispatch('toggleBurger')
 		}
 	},
-	// computed: {
-		// burgerOpen() {
-		// 	return this.$store.state.burgerOpen
-		// }
-	// },
 
 	components: {
 		SocialItem,
@@ -132,39 +127,14 @@ $c: ".header";
 			margin-right: 20px;
 			font-size: 1.5rem;
 			transition: color $base-trans-speed ease-in-out;
-			&:hover {
-				color: $mainGold;
-			}
-			&::after {
-				content: '';
-				display: block;
-				background-color: $mainGold;
-				width: 0%;
-				height: 2px;
-				position: absolute;
-				margin: auto;
-				bottom: 0;
-				transition: width $base-trans-speed;
-			}
-			&:hover::after {
-				width: 100%;
-			}
+			@include hover--colors($offWhite, $mainGold);
+			@include underline();
 			&:last-of-type {
 				margin-right: 0;
 			}
 			@media screen and (max-width: $breakpoint-ltab) {
 				font-size: 1rem;
 			}
-		}
-	}
-	&__social-item {
-		@media screen and (max-width: $breakpoint-ptab) {
-			width: 20px;
-			padding-top: 6px;
-			padding-bottom: 4px;
-			padding-left: 6px;
-			padding-right: 6px;
-			border-radius: 14px;
 		}
 	}
 }

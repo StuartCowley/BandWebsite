@@ -25,7 +25,7 @@
 
 // Hover events
 @mixin hover--colors($primary-color, $secondary-color) {
-	transition: 500ms color ease-in-out, 500ms border-color ease-in-out;
+	transition: $base-trans-speed color ease-in-out, $base-trans-speed border-color ease-in-out;
 	&:hover {
 		border-color: $secondary-color;
 		color: $secondary-color;
@@ -37,5 +37,22 @@
 			border-color: $primary-color;
 			color: $primary-color;
 		}
+	}
+}
+
+@mixin underline() {
+	&::after {
+		content: '';
+		display: block;
+		background-color: $mainGold;
+		width: 0%;
+		height: 2px;
+		position: absolute;
+		margin: auto;
+		bottom: 0;
+		transition: width $base-trans-speed;
+	}
+	&:hover::after {
+		width: 100%;
 	}
 }
