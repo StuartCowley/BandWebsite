@@ -1,5 +1,7 @@
 # bees-knees-vue
 
+Work in progress. Currently just a landing page, built in VueJS.
+
 ## Project setup
 ```
 npm install
