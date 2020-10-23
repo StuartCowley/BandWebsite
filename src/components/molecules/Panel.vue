@@ -6,7 +6,7 @@
 					<div class="panel__heading" v-html="heading"></div>
 				</div>
 			</div>
-			<div class="grid__item" :class="{'one-half': $mq == 'ltab' || $mq == 'desk'}">
+			<div class="grid__item" :class="{'one-half': $mq == 'ltab' }">
 				<div class="panel__content"
 				:class="{
 					'panel__content--vertical': $mq == 'mob' || $mq == 'ptab' || $mq == 'max',
@@ -52,6 +52,7 @@ $c:'.panel';
     padding-left: 40px;
     padding-right: 40px;
 		background-color: $almostBlack;
+		opacity: 0.9;
 		border-radius: 40px;
 		text-align: center;
 		color: $mainGold;
@@ -60,6 +61,7 @@ $c:'.panel';
 			display: flex;
 			align-items: center;
 			height: 100%;
+			min-width: 300px;
 		}
 	}
 	&__content {
@@ -69,6 +71,7 @@ $c:'.panel';
     padding-left: 32px;
     padding-right: 12px;
 		background-color: $almostBlack;
+		opacity: 0.9;
 		color: $mainGold;
 		@include copy;
 		&--vertical {
@@ -86,13 +89,21 @@ $c:'.panel';
 				padding-right: 12px;
 			}
 			li {
-				display: inline-block;
+				display: inline-flex;
 				box-sizing: border-box;
 				width: 50%;
 				padding-right: 20px;
-				margin-bottom: 20px;
+				margin-bottom: 10px;
+				max-height: 84px;
+				min-height: 56px;
+				align-items: center;
+				&.bold {
+					font-weight: 600;
+				}
 				@media screen and (max-width: $breakpoint-ptab) {
 					width: 100%;
+					justify-content: center;
+					min-height: 20px;
 				}
 			}
 		}

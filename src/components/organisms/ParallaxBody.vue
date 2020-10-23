@@ -60,7 +60,6 @@
 						<li>Rock/Pop</li>
 						<li>Ska</li>
 						<li>Motown</li>
-						<li>Folk</li>
 						<li>Acoustic</li>
 						<li>Disco</li>
 						<li>R &amp; B / Soul</li>
@@ -68,7 +67,7 @@
 						<li>Classic Rock</li>
 						<li>Rock n Roll</li>
 						<li>Blues</li>
-						<li>Requests taken in advance</li>
+						<li class="bold">Requests taken in advance</li>
 					</ul>
 				</Panel>
 			</div>
@@ -179,16 +178,16 @@ export default {
 					}
 				}
 				&::after {
-				content: "";
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				transform: translateZ(-1px) scale(1.5);
-				background-repeat: no-repeat;
-				background-size: cover;
-				z-index: -1;
+					content: "";
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					transform: translateZ(-1px) scale(1.5);
+					background-repeat: no-repeat;
+					background-size: cover;
+					z-index: -1;
 				}
 			}
 			&--static {

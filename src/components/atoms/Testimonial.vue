@@ -49,8 +49,8 @@ export default {
 $c:'.testimonial';
 #{$c} {
 	.page-container {
-		padding-left: 5rem;
-		padding-right: 5rem;
+		padding-left: 3.5rem;
+		padding-right: 3.5rem;
 		@media screen and (max-width: $breakpoint-ptab) {
 			// padding-left: 1rem;
 			// padding-right: 1rem;
