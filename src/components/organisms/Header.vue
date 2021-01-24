@@ -16,20 +16,8 @@
 
 				<div class="grid__item grid__item--auto" :class="{'grid__item--hide': $mq == 'mob' ||  $mq == 'ptab' }">
 					<nav class="header__nav-wrap">
-						<a href="#" class="header__nav-item">
-							About
-						</a>
-						<a href="#" class="header__nav-item">
-							Testimonials
-						</a>
-						<a href="#" class="header__nav-item">
-							FAQs
-						</a>
-						<a href="#" class="header__nav-item">
-							Song list
-						</a>
-						<a href="#" class="header__nav-item">
-							Contact
+						<a v-for="item in menuItems" :key="item.title" class="header__nav-item" :href="item.url">
+							{{item.title}}
 						</a>
 					</nav>
 				</div>
@@ -63,6 +51,12 @@ export default {
 	methods: {
 		toggleNav() {
 			this.$store.dispatch('toggleBurger')
+		}
+	},
+
+	computed: {
+		menuItems() {
+			return this.$store.state.menuItems
 		}
 	},
 

@@ -6,20 +6,8 @@
 
 				<div class="grid__item">
 					<nav class="footer__nav-wrap">
-						<a href="#" class="footer__nav-item">
-							About
-						</a>
-						<a href="#" class="footer__nav-item">
-							Testimonials
-						</a>
-						<a href="#" class="footer__nav-item">
-							FAQs
-						</a>
-						<a href="#" class="footer__nav-item">
-							Song list
-						</a>
-						<a href="#" class="footer__nav-item">
-							Contact
+						<a v-for="item in menuItems" :key="item.title" class="footer__nav-item" :href="item.url">
+							{{item.title}}
 						</a>
 					</nav>
 				</div>
@@ -62,6 +50,9 @@ export default {
 	computed: {
 		currentYear() {
 			return new Date().getFullYear()
+		},
+		menuItems() {
+			return this.$store.state.menuItems
 		}
 	}
 };

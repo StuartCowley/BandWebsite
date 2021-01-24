@@ -7,6 +7,28 @@ export default new Vuex.Store({
 	state: {
 		appInitialised: false,
 		burgerOpen: false,
+		menuItems: [
+			{
+				title: 'About',
+				url: '/about-the-band'
+			},
+			{
+				title: 'Testimonials',
+				url: '/testimonials'
+			},
+			{
+				title: 'FAQs',
+				url: '/frequently-asked-questions'
+			},
+			{
+				title: 'Song List',
+				url: '/song-list'
+			},
+			{
+				title: 'Contact',
+				url: '/contact'
+			},
+		]
 	},
 	mutations: {
 		showLoadScreen(state) {
