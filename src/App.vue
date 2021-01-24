@@ -1,8 +1,8 @@
 <template>
 	<div class="page-wrapper">
-		<Header :burgerOpen="burgerOpen" />
 
 		<template v-if="initialised">
+			<Header :burgerOpen="burgerOpen" />
 			<transition name="fade">
 				<div class="faded-background" v-show="burgerOpen"></div>
 			</transition>
