@@ -1,8 +1,8 @@
 <template>
 	<div class="logo-wrap">
-		<a href="#">
+		<a :href="link" :is="link ? 'a' : 'div'">
 			<div class="logo" v-html="require('../../assets/bee.svg')"></div>
-			<div class="logo-text">
+			<div class="logo-text" v-if="showText">
 				<span>The</span>
 				<span>Bees Knees</span>
 			</div>
@@ -13,6 +13,10 @@
 <script>
 export default {
 	name: 'Logo',
+	props: {
+		showText: Boolean,
+		link: String,
+	},
 }
 </script>
 
@@ -22,10 +26,8 @@ export default {
 $c: '.logo';
 
 #{$c} {
-	width: 60px;
 	&-wrap {
 		position: relative;
-		cursor: pointer;
 	}
 	&-text {
 		position: absolute;

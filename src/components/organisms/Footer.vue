@@ -14,7 +14,7 @@
 
 				<div class="grid__item grid__item--auto ">
 					<div class="footer__logo-wrap">
-						<div class="footer__logo" v-html="require('../../assets/bee.svg')"></div>
+						<Logo :link="'#'" class="footer__logo" />
 						<div class="footer__logo-title">The Bees Knees</div>
 						<div class="footer__logo-subtitle">Professional Party Band</div>
 					</div>
@@ -41,11 +41,13 @@
 
 <script>
 import SocialItem from '../atoms/SocialItem.vue'
+import Logo from '../atoms/Logo'
 
 export default {
 	name: "Footer",
 	components: {
 		SocialItem,
+		Logo,
 	},
 	computed: {
 		currentYear() {
