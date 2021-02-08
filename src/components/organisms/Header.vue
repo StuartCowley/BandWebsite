@@ -11,7 +11,9 @@
 				</div>
 
 				<div class="grid__item" :class="{'grid__item--hide': $mq == 'mob' ||  $mq == 'ptab' }">
-					<Logo />
+					<div class="header__logo-wrap">
+						<Logo :link="'#'" :show-text="true" />
+					</div>
 				</div>
 
 				<div class="grid__item grid__item--auto" :class="{'grid__item--hide': $mq == 'mob' ||  $mq == 'ptab' }">
@@ -90,9 +92,9 @@ $c: ".header";
 	}
 
 	&__logo {
-		width: 60px;
 		&-wrap {
 			position: relative;
+			width: 60px;
 		}
 		&-text {
 			position: absolute;

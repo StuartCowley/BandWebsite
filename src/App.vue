@@ -1,25 +1,33 @@
 <template>
 	<div class="page-wrapper">
-		<Header :burgerOpen="burgerOpen" />
 
-		<template v-if="initialised">
-			<transition name="fade">
-				<div class="faded-background" v-show="burgerOpen"></div>
-			</transition>
-			<ParallaxBody :burgerOpen="burgerOpen" />
+		<template v-if="showLandingPageOnly">
+			<LandingPage />
 		</template>
 
 		<template v-else>
-			<div class="loading-wrap">
-				<img class="loading" :src="require('./assets/loading.gif')" />
-			</div>
+			<template v-if="initialised">
+				<Header :burgerOpen="burgerOpen" />
+				<transition name="fade">
+					<div class="faded-background" v-show="burgerOpen"></div>
+				</transition>
+				<ParallaxBody :burgerOpen="burgerOpen" />
+			</template>
+
+			<template v-else>
+				<div class="loading-wrap">
+					<img class="loading" :src="require('./assets/loading.gif')" />
+				</div>
+			</template>
 		</template>
+
 	</div>
 </template>
 
 <script>
 import Header from './components/organisms/Header.vue'
 import ParallaxBody from './components/organisms/ParallaxBody.vue'
+import LandingPage from './components/organisms/LandingPage'
 
 export default {
 	name: 'App',
@@ -29,8 +37,12 @@ export default {
   components: {
 		Header,
 		ParallaxBody,
+		LandingPage
 	},
 	computed: {
+		showLandingPageOnly() {
+			return this.$store.state.showLandingPageOnly
+		},
 		initialised() {
 			return this.$store.state.appInitialised
 		},
