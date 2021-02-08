@@ -4,7 +4,7 @@
 			<div class="landing-video__video-wrap">
 				<video class="landing-video__video" muted loop autoplay>
 					Sorry, your browser doesn't support embedded videos
-					<source type="video/mp4" src="../../assets/hero-video.mp4" />
+					<source type="video/mp4" src="../../assets/hero-video-comp.mp4" />
 				</video>
 			</div>
 		</ScreenFill>
