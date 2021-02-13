@@ -12,15 +12,18 @@
 
 				<div class="landing-page__text-wrap">
 					<div class="landing-page__text">
-						(Our shiny new site is currently under construction)
-					</div>
-					<div class="landing-page__text">
 						We are accepting still accepting bookings during the COVID-19 emergency.
 					</div>
 					<div class="landing-page__text">
 						If you would like to enquire or book the band please get in touch
-						via <a class="landing-page__text--link" href="mailto:thebeeskneesband@hotmail.com">thebeeskneesband@hotmail.com</a>,
-						via our <a class="landing-page__text--link" href="http://www.facebook.com/thebeeskneesuk">Facebook</a> page.
+						via
+						<a class="landing-page__text--link" href="mailto:thebeeskneesband@hotmail.com">
+							Email
+						</a>,
+						or our
+						<a class="landing-page__text--link" href="http://www.facebook.com/thebeeskneesuk">
+							Facebook
+						</a> page.
 					</div>
 					<div class="landing-page__text">
 						Stay safe!
@@ -45,6 +48,9 @@ export default {
 		return {
 		}
 	},
+	created() {
+		document.title = "The Bees Knees - Professional Cover Band from Manchester"
+	}
 }
 </script>
 
@@ -61,9 +67,15 @@ export default {
 			width: 100px;
 			margin-left: auto;
 			margin-right: auto;
+			@media screen and (max-width: $breakpoint-ptab) {
+					width: 50px;
+				}
 			&-wrap {
 				color: $mainGold;
 				margin-bottom: 40px;
+				@media screen and (max-width: $breakpoint-ptab) {
+					margin-bottom: 20px;
+				}
 			}
 			&-title {
 			@include heading;
@@ -100,8 +112,6 @@ export default {
 			}
 
 			&-wrap {
-				margin-left: 40px;
-				margin-right: 40px;
 				color: $mainGold;
 				font-size: 1.4rem;
 				font-family: 'Montserrat';

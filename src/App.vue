@@ -78,12 +78,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-	overflow: hidden;
-}
-
 a {
 	text-decoration: none;
+	@include hover--colors($mainGold, $mainGold);
 }
 
 .faded-background {
