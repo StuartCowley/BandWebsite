@@ -18,8 +18,7 @@
 						If you would like to enquire or book the band please get in touch
 						via
 						<a class="landing-page__text--link" href="mailto:thebeeskneesband@hotmail.com">
-							Email
-						</a>,
+							Email</a>,
 						or our
 						<a class="landing-page__text--link" href="http://www.facebook.com/thebeeskneesuk">
 							Facebook
