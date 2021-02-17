@@ -80,6 +80,9 @@ export default {
 			@include heading;
 			text-align: center;
 			margin-bottom: 16px;
+			@media screen and (orientation: landscape) {
+				font-size: 1.6rem;
+				}
 			}
 			&-subtitle {
 				letter-spacing: 0.4rem;
