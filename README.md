@@ -1,6 +1,11 @@
-# bees-knees-vue
+# Band Website
 
 Work in progress. Currently just a landing page, built in VueJS.
+
+## Future features
+- Parallax layout on home page
+- Transitions and animations throughout
+- Interactive set list creator
 
 ## Project setup
 ```
@@ -15,11 +20,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Run your tests
-```
-npm run test
 ```
 
 ### Lints and fixes files
