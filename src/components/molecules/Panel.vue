@@ -66,10 +66,10 @@ $c:'.panel';
 	}
 	&__content {
 		border-radius: 40px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 32px;
-    padding-right: 12px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 		background-color: $almostBlack;
 		opacity: 0.9;
 		color: $mainGold;
@@ -91,11 +91,11 @@ $c:'.panel';
 			li {
 				display: inline-flex;
 				box-sizing: border-box;
+				font-size: 1.5rem;
 				width: 50%;
 				padding-right: 20px;
 				margin-bottom: 10px;
 				max-height: 84px;
-				min-height: 56px;
 				align-items: center;
 				&.bold {
 					font-weight: 600;

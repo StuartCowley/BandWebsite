@@ -54,7 +54,8 @@ export default {
 		}
 	},
 	created() {
-		this.$store.dispatch('showLoadScreen')
+		this.$store.dispatch('showLoadScreen'),
+		document.title = "The Bees Knees - Professional Cover Band from Manchester"
 	},
 	mounted: function() {
 		this.$store.dispatch('appLoaded')

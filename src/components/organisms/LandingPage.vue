@@ -46,9 +46,6 @@ export default {
 	data () {
 		return {
 		}
-	},
-	created() {
-		document.title = "The Bees Knees - Professional Cover Band from Manchester"
 	}
 }
 </script>
