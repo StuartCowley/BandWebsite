@@ -158,8 +158,8 @@ export default {
 			color: $mainGold;
 			font-size: 2.4rem;
 			@media screen and (max-width: $breakpoint-ptab) {
-				font-size: 1.4rem;
-			}
+				font-size: 1.2rem;
+				}
 		}
 
 		&__section {

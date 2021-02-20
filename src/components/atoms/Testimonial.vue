@@ -51,10 +51,6 @@ $c:'.testimonial';
 	.page-container {
 		padding-left: 3.5rem;
 		padding-right: 3.5rem;
-		@media screen and (max-width: $breakpoint-ptab) {
-			// padding-left: 1rem;
-			// padding-right: 1rem;
-		}
 	}
 	&-wrap {
 		text-align: center;
@@ -64,7 +60,7 @@ $c:'.testimonial';
 		margin-bottom: 1rem;
 		font-size: 1.4rem;
 		@media screen and (max-width: $breakpoint-mob) {
-			font-size: 0.8rem;
+			font-size: 0.9rem;
 		}
 		&:before,
 		&:after {
