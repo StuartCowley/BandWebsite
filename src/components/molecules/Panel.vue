@@ -56,6 +56,10 @@ $c:'.panel';
 		border-radius: 40px;
 		text-align: center;
 		color: $mainGold;
+		@media screen and (max-width: $breakpoint-ptab) {
+			padding-top: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
 
 		&-wrap {
 			display: flex;
@@ -95,7 +99,7 @@ $c:'.panel';
 				padding-right: 20px;
 				margin-bottom: 10px;
 				max-height: 84px;
-				min-height: 56px;
+				min-height: 2rem;
 				align-items: center;
 				&.bold {
 					font-weight: 600;
@@ -103,7 +107,8 @@ $c:'.panel';
 				@media screen and (max-width: $breakpoint-ptab) {
 					width: 100%;
 					justify-content: center;
-					min-height: 20px;
+					font-size: 1rem;
+					margin-bottom: 4px;
 				}
 			}
 		}
