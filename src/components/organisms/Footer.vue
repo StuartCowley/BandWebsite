@@ -6,15 +6,15 @@
 
 				<div class="grid__item">
 					<nav class="footer__nav-wrap">
-						<a v-for="item in menuItems" :key="item.title" class="footer__nav-item" :href="item.url">
+						<router-link v-for="item in menuItems" :key="item.title" class="footer__nav-item" :to="item.url">
 							{{item.title}}
-						</a>
+						</router-link>
 					</nav>
 				</div>
 
 				<div class="grid__item grid__item--auto ">
 					<div class="footer__logo-wrap">
-						<Logo :link="'#'" class="footer__logo" />
+						<Logo :isLink="true" class="footer__logo" />
 						<div class="footer__logo-title">The Bees Knees</div>
 						<div class="footer__logo-subtitle">Professional Party Band</div>
 					</div>

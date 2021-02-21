@@ -1,30 +1,42 @@
 <template>
 	<div class="burger-menu" :class="{'burger-menu--open': navOpen}">
-		<ul class="burger-menu__items">
-			<a href="#"><li class="burger-menu__item palette--link">Home</li></a>
-			<a href="#"><li class="burger-menu__item palette--link">About</li></a>
-			<a href="#"><li class="burger-menu__item palette--link">Info</li></a>
-			<a href="#"><li class="burger-menu__item palette--link">Contact</li></a>
+		<div class="burger-menu__items">
+			<router-link to="/">
+				<Logo class="burger-menu__logo" />
+				<div class="burger-menu__logo-title">
+					The Bees Knees
+				</div>
+			</router-link>
+			<router-link class="burger-menu__item palette--link" v-for="item in menuItems" :key="item.title" :to="item.url">
+				{{item.title}}
+			</router-link>
 			<div class="burger-menu__socials">
 				<SocialItem link="http://www.facebook.com" :logo="require('../../assets/icon-facebook.svg')" />
 				<SocialItem link="http://www.google.com" :logo="require('../../assets/icon-mail.svg')" />
 			</div>
-		</ul>
+		</div>
 	</div>
 </template>
 
 <script>
 import SocialItem from '../atoms/SocialItem'
+import Logo from '../atoms/Logo'
 
 export default {
 	name: "BurgerMenu",
 	components: {
+		Logo,
 		SocialItem
 	},
 	props: {
 		navOpen: {
 			type: Boolean,
 			default: false,
+		}
+	},
+	computed: {
+		menuItems() {
+			return this.$store.state.menuItems
 		}
 	}
 }
@@ -51,6 +63,20 @@ $c:'.burger-menu';
 		transform: none;
 	}
 
+	&__logo {
+		width: 5rem;
+		margin-left: auto;
+		margin-right: auto;
+		&-title {
+			color: $mainGold;
+		font-family: $heading-font-family;
+		margin-bottom: 1rem;
+		text-align: center;
+		line-height: 1.2;
+		text-shadow: 0 0 5px #000;
+		}
+	}
+
 	&__items {
 		position: relative;
 		padding-top: $header-height;
@@ -65,6 +91,7 @@ $c:'.burger-menu';
 		transition: transform $base-trans-speed*0.75 cubic-bezier(0.77,0.2,0.05,1.0);
 	}
 	&__item {
+		display: block;
 		transition: color $base-trans-speed ease;
 		padding: 10px 0;
 		font-size: 1.5rem;

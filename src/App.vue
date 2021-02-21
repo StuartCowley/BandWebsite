@@ -8,12 +8,11 @@
 		<template v-else>
 			<template v-if="initialised">
 				<Header :burgerOpen="burgerOpen" />
+				<router-view />
 				<transition name="fade">
 					<div class="faded-background" v-show="burgerOpen"></div>
 				</transition>
-				<ParallaxBody :burgerOpen="burgerOpen" />
 			</template>
-
 			<template v-else>
 				<div class="loading-wrap">
 					<img class="loading" :src="require('./assets/loading.gif')" />
@@ -26,7 +25,6 @@
 
 <script>
 import Header from './components/organisms/Header.vue'
-import ParallaxBody from './components/organisms/ParallaxBody.vue'
 import LandingPage from './components/organisms/LandingPage'
 
 export default {
@@ -36,7 +34,6 @@ export default {
 	},
   components: {
 		Header,
-		ParallaxBody,
 		LandingPage
 	},
 	computed: {
