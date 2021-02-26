@@ -1,9 +1,15 @@
 <template>
 	<div class="about-page">
 		<SecondaryLayout>
-			<div class="about-page__title">
-				about page
-			</div>
+
+			<template v-slot:title>
+				title here
+			</template>
+
+			<template v-slot:content>
+				About content
+			</template>
+
 		</SecondaryLayout>
 	</div>
 </template>
@@ -20,13 +26,11 @@ export default {
 </script>
 
 <style lang="scss">
-$c: ".about-page";
+@import "src/scss/toolkit";
 
+$c: ".about-page";
 #{$c}
 {
-	&__title {
-		font-size: 3rem;
-		color: red;
-	}
+	@include secondary-page-layout;
 }
 </style>

@@ -1,9 +1,15 @@
 <template>
 	<div class="songlist-page">
 		<SecondaryLayout>
-			<div class="songlist-page__title">
-				Song list page
-			</div>
+
+			<template v-slot:title>
+				title here
+			</template>
+
+			<template v-slot:content>
+				Song list content
+			</template>
+
 		</SecondaryLayout>
 	</div>
 </template>
@@ -20,13 +26,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import "src/scss/toolkit";
 $c: ".songlist-page";
 
 #{$c}
 {
-	&__title {
-		font-size: 3rem;
-		color: red;
-	}
+	@include secondary-page-layout;
 }
 </style>

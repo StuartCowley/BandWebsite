@@ -1,9 +1,15 @@
 <template>
 	<div class="faq-page">
 		<SecondaryLayout>
-			<div class="faq-page__title">
-				FAQ page
-			</div>
+
+			<template v-slot:title>
+				title here
+			</template>
+
+			<template v-slot:content>
+				FAQ content
+			</template>
+
 		</SecondaryLayout>
 	</div>
 </template>
@@ -20,13 +26,11 @@ export default {
 </script>
 
 <style lang="scss">
-$c: ".faq-page";
+@import "src/scss/toolkit";
 
+$c: ".faq-page";
 #{$c}
 {
-	&__title {
-		font-size: 3rem;
-		color: red;
-	}
+	@include secondary-page-layout;
 }
 </style>

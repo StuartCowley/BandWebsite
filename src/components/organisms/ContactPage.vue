@@ -1,9 +1,15 @@
 <template>
 	<div class="contact-page">
 		<SecondaryLayout>
-			<div class="contact-page__title">
-				Contact page
-			</div>
+
+			<template v-slot:title>
+				title here
+			</template>
+
+			<template v-slot:content>
+				contact content
+			</template>
+
 		</SecondaryLayout>
 	</div>
 </template>
@@ -20,13 +26,11 @@ export default {
 </script>
 
 <style lang="scss">
-$c: ".contact-page";
+@import "src/scss/toolkit";
 
+$c: ".contact-page";
 #{$c}
 {
-	&__title {
-		font-size: 3rem;
-		color: red;
-	}
+	@include secondary-page-layout;
 }
 </style>
