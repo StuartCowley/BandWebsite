@@ -12,10 +12,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="grid__item" :class="{'one-half': $mq == 'ltab' || $mq == 'desk' || $mq == 'max' }">
-					<div class="testimonial__image"
+				<div
+					class="testimonial__image"
 					:class="{'testimonial__image--fill': $mq == 'mob' || $mq == 'ptab' || $mq == 'ltab' }"
-					:style="{backgroundImage: `url(${image})` }"></div>
+					:style="{backgroundImage: `url(${image})` }">
 				</div>
 			</div>
 		</div>
@@ -81,6 +81,7 @@ $c:'.testimonial';
 	}
 	&__attribution {
 		color: yellow;
+		font-style: italic;
 	}
 	&__image {
 		background-size: cover;
