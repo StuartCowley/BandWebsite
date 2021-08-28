@@ -54,7 +54,7 @@
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg3">
 			<div class="page-container">
-				<Panel :isList="true" heading="Genres / Set options">
+				<Panel :isList="false" heading="Genres / Set options" highlight="Special Requests taken in advance!">
 					<ul>
 						<li>1950s to modern day</li>
 						<li>Rock/Pop</li>
@@ -67,7 +67,6 @@
 						<li>Classic Rock</li>
 						<li>Rock n Roll</li>
 						<li>Blues</li>
-						<li class="bold">Requests taken in advance</li>
 					</ul>
 				</Panel>
 			</div>
@@ -84,7 +83,7 @@
 		</div>
 		<div class="parallax-body__section parallax-body__section--parallax bg4">
 			<div class="page-container">
-				<Panel heading="Performance details">
+				<Panel :isList="true" heading="Performance details">
 					<ul>
 						<li>Can perform outdoors</li>
 						<li>We provide all our own sound and lighting equipment</li>
@@ -156,9 +155,9 @@ export default {
 			text-align: center;
 			font-family: 'Montserrat';
 			color: $mainGold;
-			font-size: 2.4rem;
+			font-size: 2.2rem;
 			@media screen and (max-width: $breakpoint-ptab) {
-				font-size: 1.2rem;
+				font-size: 1.4rem;
 				}
 		}
 

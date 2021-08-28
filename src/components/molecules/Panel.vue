@@ -13,6 +13,7 @@
 					'panel__content--list': isList
 					}">
 					<slot />
+					<div v-if="highlight" class="panel__highlight">{{this.highlight}}</div>
 				</div>
 			</div>
 		</div>
@@ -30,6 +31,10 @@ export default {
 		isList: {
 			type: Boolean,
 			default: false
+		},
+		highlight: {
+			type: String,
+			default: ''
 		}
 	}
 
@@ -72,8 +77,13 @@ $c:'.panel';
 		border-radius: 40px;
     padding-top: 1rem;
     padding-bottom: 1rem;
+<<<<<<< HEAD
     padding-left: 2rem;
     padding-right: 2rem;
+=======
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+>>>>>>> origin/fix/layout-fixes
 		background-color: $almostBlack;
 		opacity: 0.9;
 		color: $mainGold;
@@ -84,34 +94,26 @@ $c:'.panel';
 		ul {
 			list-style: none;
 			padding-left: 0;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		li {
+			text-align: center;
 		}
 		&--list {
-			@media screen and (max-width: $breakpoint-ptab) {
-				padding-top: 12px;
-				padding-bottom: 12px;
-				padding-left: 12px;
-				padding-right: 12px;
-			}
 			li {
-				display: inline-flex;
-				box-sizing: border-box;
-				font-size: 1.5rem;
-				width: 50%;
-				padding-right: 20px;
-				margin-bottom: 10px;
-				max-height: 84px;
-				align-items: center;
-				&.bold {
-					font-weight: 600;
-				}
-				@media screen and (max-width: $breakpoint-ptab) {
-					width: 100%;
-					justify-content: center;
-					font-size: 1rem;
-					margin-bottom: 4px;
+				@media screen and (min-width: $breakpoint-ptab) {
+					text-align: left;
+					display: list-item;
+					list-style-type: disc;
+					list-style-position: outside;
 				}
 			}
 		}
+	}
+	&__highlight {
+		text-align: center;
+		font-weight: 600;
 	}
 }
 
