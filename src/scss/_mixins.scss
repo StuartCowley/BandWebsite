@@ -23,6 +23,13 @@
 	}
 }
 
+@mixin secondary-page-layout() {
+	height: calc(100vh - #{$header-height});
+	@media screen and (max-width: $breakpoint-ptab) {
+		height: calc(100vh - #{$header-height-small});
+	}
+}
+
 // Hover events
 @mixin hover--colors($primary-color, $secondary-color) {
 	transition: $base-trans-speed color ease-in-out, $base-trans-speed border-color ease-in-out;

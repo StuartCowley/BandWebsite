@@ -12,15 +12,15 @@
 
 				<div class="grid__item" :class="{'grid__item--hide': $mq == 'mob' ||  $mq == 'ptab' }">
 					<div class="header__logo-wrap">
-						<Logo :link="'#'" :show-text="true" />
+						<Logo :isLink="true" :show-text="true" />
 					</div>
 				</div>
 
 				<div class="grid__item grid__item--auto" :class="{'grid__item--hide': $mq == 'mob' ||  $mq == 'ptab' }">
 					<nav class="header__nav-wrap">
-						<a v-for="item in menuItems" :key="item.title" class="header__nav-item" :href="item.url">
+						<router-link class="header__nav-item" v-for="item in menuItems" :key="item.title" :to="item.url">
 							{{item.title}}
-						</a>
+						</router-link>
 					</nav>
 				</div>
 

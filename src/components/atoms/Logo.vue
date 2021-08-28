@@ -1,12 +1,12 @@
 <template>
 	<div class="logo-wrap">
-		<a :href="link" :is="link ? 'a' : 'div'">
+		<router-link to="/" :is="isLink ? 'router-link' : 'div'">
 			<div class="logo" v-html="require('../../assets/bee.svg')"></div>
 			<div class="logo-text" v-if="showText">
 				<span>The</span>
 				<span>Bees Knees</span>
 			</div>
-		</a>
+		</router-link>
 	</div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
 	name: 'Logo',
 	props: {
 		showText: Boolean,
-		link: String,
+		isLink: Boolean,
 	},
 }
 </script>
