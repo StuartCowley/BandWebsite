@@ -77,13 +77,8 @@ $c:'.panel';
 		border-radius: 40px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-<<<<<<< HEAD
-    padding-left: 2rem;
-    padding-right: 2rem;
-=======
     padding-left: 2.5rem;
     padding-right: 1rem;
->>>>>>> origin/fix/layout-fixes
 		background-color: $almostBlack;
 		opacity: 0.9;
 		color: $mainGold;
