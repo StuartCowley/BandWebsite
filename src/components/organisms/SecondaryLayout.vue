@@ -34,7 +34,7 @@ $c: ".secondary-layout";
 	display: flex;
 	flex-flow: column;
 	@include header--padding;
-	height: 100%;
+	min-height: 100%;
 	background-color: $white;
 
 	&__title {
