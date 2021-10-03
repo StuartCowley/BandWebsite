@@ -3,11 +3,25 @@
 		<SecondaryLayout>
 
 			<template v-slot:title>
-				title here
+				<div class="songlist-page__header">
+					Current Repertoire
+				</div>
 			</template>
 
 			<template v-slot:content>
-				Song list content
+				<div class="page-container">
+					<div class="songlist-page__body">
+						<div class="songlist-page__copy">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad quos fugiat quae, earum asperiores pariatur odit rem nobis labore nostrum facilis itaque aspernatur debitis fugit quibusdam praesentium harum recusandae nulla.
+						</div>
+						<div class="songlist-page__table">
+							<div class="song-wrapper" v-for="song in songData" :key="song.id">
+								<div class="title">{{song.title}}</div>
+								<div class="artist">{{song.artist}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</template>
 
 		</SecondaryLayout>
@@ -15,12 +29,19 @@
 </template>
 
 <script>
+// TODO refactor to fix secondary layout issues as described here: https://markus.oberlehner.net/blog/dynamic-vue-layout-components/
 import SecondaryLayout from './SecondaryLayout'
+import songs from '../../data/songs.json';
 
 export default {
 	name: 'SongListPage',
 	components: {
 		SecondaryLayout
+	},
+	computed: {
+		songData() {
+			return songs.map(song => { return song })
+		}
 	}
 }
 </script>
@@ -32,5 +53,45 @@ $c: ".songlist-page";
 #{$c}
 {
 	@include secondary-page-layout;
+	&__header {
+		@include heading;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: $almostBlack;
+		opacity: 0.9;
+		text-align: center;
+		color: $mainGold;
+	}
+	&__body {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: $offWhite;
+		color: $black;
+	}
+	&__copy {
+		@include copy;
+		text-align: center;
+	}
+	&__table {
+		margin-left: 2rem;
+		margin-right: 2rem;
+		.song {
+			&-wrapper {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+				display: flex;
+				.artist,
+				.title {
+					width: 50%;
+				}
+				.title {
+					text-align: right;
+				}
+				.artist {
+					padding-left: 1rem;
+				}
+			}
+		}
+	}
 }
 </style>
