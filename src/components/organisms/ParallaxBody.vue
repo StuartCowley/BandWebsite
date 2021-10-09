@@ -147,8 +147,9 @@ export default {
 		height: 100vh;
 		box-sizing: border-box;
 		overflow-x: hidden;
+		overflow-y: scroll;
 		@include header--padding;
-		perspective: 2px;
+		perspective: 8px;
 
 		&--frozen {
 			overflow: hidden;
@@ -176,6 +177,7 @@ export default {
 			align-items: center;
 			justify-content: center;
 			&--parallax {
+				transform: translateZ(1px) scale(0.85);
 				.page-container {
 					padding-left: 4rem;
 					padding-right: 4rem;
@@ -191,7 +193,6 @@ export default {
 					bottom: 0;
 					left: 0;
 					right: 0;
-					transform: translateZ(-1px) scale(1.5);
 					background-repeat: no-repeat;
 					background-size: cover;
 					z-index: -1;
@@ -201,7 +202,7 @@ export default {
 				height: 65%;
 				overflow: hidden;
 				background: url('../../assets/blur-abstract-black-hexagon-mesh-pattern-background_33869-397.jpg');
-				background-size: 200%;
+				background-size: 150%;
 			}
 		}
 
