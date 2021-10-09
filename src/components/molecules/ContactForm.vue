@@ -61,6 +61,7 @@
 <script>
 
 export default {
+	// todo finish this, similar example here https://codepen.io/netzzwerg/pen/VQKBPQ
 	name: 'ContactForm',
 	data: () => {
 		return {
