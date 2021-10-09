@@ -75,8 +75,8 @@ $c:'.panel';
 	}
 	&__content {
 		border-radius: 40px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     padding-left: 2.5rem;
     padding-right: 1rem;
 		background-color: $almostBlack;

@@ -4,7 +4,10 @@
 		<div class="parallax-body__section parallax-body__section--static">
 			<div class="page-container">
 				<div class="parallax-body__intro-panel">
-					Versatile professional party band dedicated to making your event amazing. From London to Glasgow we have been thrilling audiences with our covers from pop, rock, Motown, ska and much much more. Available for all your event needs
+					<div class="intro-header">We are The Bees Knees!</div>
+					<div>
+						Versatile professional party band dedicated to making your event amazing. From London to Glasgow we have been thrilling audiences with our covers from pop, rock, Motown, ska and much much more. Available for all your event needs
+					</div>
 				</div>
 			</div>
 		</div>
@@ -155,10 +158,15 @@ export default {
 			text-align: center;
 			font-family: 'Montserrat';
 			color: $mainGold;
-			font-size: 2.2rem;
+			font-size: 1.8rem;
 			@media screen and (max-width: $breakpoint-ptab) {
-				font-size: 1.4rem;
+				font-size: 1.2rem;
 				}
+			.intro-header {
+				@include heading;
+				text-decoration: underline;
+				margin-bottom: 1rem;;
+			}
 		}
 
 		&__section {
