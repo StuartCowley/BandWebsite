@@ -1,7 +1,9 @@
 <template>
-	<div class="cta">
-		{{label}}
-	</div>
+	<router-link :to="link">
+		<div class="cta">
+			{{label}}
+		</div>
+	</router-link>
 </template>
 
 <script>
@@ -11,6 +13,10 @@ export default {
 		label: {
 			type: String,
 		},
+		link: {
+			type: String,
+			default: 'contact'
+		}
 	}
 }
 </script>

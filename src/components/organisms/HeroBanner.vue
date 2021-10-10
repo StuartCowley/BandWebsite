@@ -16,9 +16,7 @@
 					Professional Party Band
 				</div>
 				<div class="cta-wrap">
-					<div class="cta">
-						<CTA :label="'Enquire Now'" />
-					</div>
+					<CTA label="Enquire Now" link="contact" />
 				</div>
 			</div>
 		</ScreenFill>
