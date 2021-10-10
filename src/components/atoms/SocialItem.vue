@@ -1,7 +1,21 @@
 <template>
-	<a :href="link" class="social-item__wrap" :class="{'social-item__wrap--reverse-colors': reverseColors }">
+
+	<a v-if="linkExternal === true"
+		class="social-item__wrap"
+		:class="{'social-item__wrap--reverse-colors': reverseColors }"
+		:href="link"
+	>
 		<div class="social-item__logo" v-html="logo"></div>
 	</a>
+
+	<router-link v-else
+		class="social-item__wrap"
+		:class="{'social-item__wrap--reverse-colors': reverseColors }"
+		:to="link"
+	>
+		<div class="social-item__logo" v-html="logo"></div>
+	</router-link>
+
 </template>
 
 <script>
@@ -17,6 +31,10 @@ export default {
 		link: {
 			type: String,
 			default: '',
+		},
+		linkExternal: {
+			type: Boolean,
+			default: false,
 		}
 	},
 

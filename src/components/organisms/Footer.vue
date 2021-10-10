@@ -22,8 +22,8 @@
 
 				<div class="grid__item">
 					<div class="footer__social-wrap">
-						<SocialItem link="http://www.facebook.com" :logo="require('../../assets/icon-facebook.svg')" />
-						<SocialItem link="http://www.google.com" :logo="require('../../assets/icon-mail.svg')" />
+						<SocialItem link="https://www.facebook.com/thebeeskneesuk" :linkExternal="true" :logo="require('../../assets/icon-facebook.svg')" />
+						<SocialItem link="contact" :logo="require('../../assets/icon-mail.svg')" />
 					</div>
 				</div>
 
