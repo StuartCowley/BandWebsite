@@ -40,7 +40,6 @@
 				</select>
       </div>
 			<div class="contact-form__element">
-        <label class="contact-form__label" for="textarea">What would you like to know?</label>
         <textarea
 					class="contact-form__input"
 					id="textarea"
