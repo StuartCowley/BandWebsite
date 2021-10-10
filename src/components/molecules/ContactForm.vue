@@ -7,6 +7,7 @@
 			<div class="contact-form__element">
 				<label class="contact-form__label" for="name">Name</label>
 				<input
+					class="contact-form__input"
 					id="name"
 					name="name"
 					placeholder="Enter your name..."
@@ -18,6 +19,7 @@
       <div class="contact-form__element">
         <label class="contact-form__label" for="email">Email</label>
         <input
+					class="contact-form__input"
           :class="{ email , error: !email.valid }"
 					id="email"
 					name="email"
@@ -28,21 +30,19 @@
 				/>
       </div>
 			<div class="contact-form__element">
-        <div>What would you like to ask about?</div>
-        <p class="select">
-          <select>
-						<option value="" disabled selected>Select your option:</option>
-						<option value="1">Booking the band / Availability</option>
-						<option value="2">Available line-ups</option>
-						<option value="3">Special song requests</option>
-						<option value="4">Something else</option>
-					</select>
-        </p>
+				<label class="contact-form__label" for="select">What is your query about?</label>
+				<select class="contact-form__input" id="select">
+					<option value="" disabled selected>Select your option:</option>
+					<option value="1">Booking the band / Availability</option>
+					<option value="2">Available line-ups</option>
+					<option value="3">Special song requests</option>
+					<option value="4">Something else</option>
+				</select>
       </div>
 			<div class="contact-form__element">
-        <label class="contact-form__label" for="textarea">Your message:</label>
+        <label class="contact-form__label" for="textarea">What would you like to know?</label>
         <textarea
-					class="contact-form__message"
+					class="contact-form__input"
 					id="textarea"
 					:maxlength="message.maxlength"
 					name="textarea"
@@ -52,7 +52,11 @@
 				/>
       </div>
       <div class="contact-form__element">
-        <input type="submit" value="Submit message">
+        <input
+					class="contact-form__submit"
+					type="submit"
+					value="Submit message"
+				>
       </div>
 		</form>
 	</div>
@@ -107,17 +111,50 @@ $c: ".contact-form";
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	@include copy;
+
+	// reset default form styling
+	input, select, button, textarea {
+		font-family: inherit;
+		font-size: 100%;
+		box-sizing: border-box;
+		padding: 1rem;
+	}
+
 	&__form {
 		width: 100%;
 	}
+
 	&__header {
 		margin-bottom: 1rem;
 	}
+
 	&__element {
 		display: flex;
-		flex-direction: column;
+		margin-left: 1rem;
+		margin-right: 1rem;
 		margin-bottom: 1rem;
-		text-align: center;
+		@media screen and (max-width: $breakpoint-ptab) {
+			flex-direction: column;
+		}
+	}
+
+	&__input {
+		flex: 1;
+	}
+
+	&__label {
+		margin-right: 1rem;
+    display: flex;
+    align-items: center;
+		@media screen and (max-width: $breakpoint-ptab) {
+			justify-content: center;
+		}
+	}
+
+	&__submit {
+		@include cta;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 </style>

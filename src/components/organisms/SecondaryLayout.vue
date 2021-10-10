@@ -35,15 +35,26 @@ $c: ".secondary-layout";
 	flex-flow: column;
 	@include header--padding;
 	min-height: 100%;
-	background-color: $white;
+	background: url('../../assets/blur-abstract-black-hexagon-mesh-pattern-background_33869-397.jpg');
+	background-size: 100%;
 
 	&__title {
+    display: flex;
+    justify-content: center;
+		margin-top: 1rem;
+    margin-bottom: 1rem;
 		font: $heading-font-family;
-		font-size: 3rem;
 	}
 
 	&__content {
 		flex: 1;
+		margin-bottom: 2rem;
+		.page-container	{
+			@media screen and (max-width: $breakpoint-mob){
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
 	}
 }
 </style>
