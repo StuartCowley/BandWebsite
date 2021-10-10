@@ -16,8 +16,7 @@
 						</div>
 						<div class="songlist-page__table">
 							<div class="song-wrapper" v-for="song in songData" :key="song.id">
-								<div class="title">{{song.title}}</div>
-								<div class="artist">{{song.artist}}</div>
+								<span>{{song.title}} - </span><span class="song-artist">{{song.artist}}</span>
 							</div>
 						</div>
 					</div>
@@ -29,7 +28,6 @@
 </template>
 
 <script>
-// TODO refactor to fix secondary layout issues as described here: https://markus.oberlehner.net/blog/dynamic-vue-layout-components/
 import SecondaryLayout from './SecondaryLayout'
 import songs from '../../data/songs.json';
 
@@ -67,23 +65,39 @@ $c: ".songlist-page";
 		text-align: center;
 	}
 	&__table {
-		margin-left: 2rem;
-		margin-right: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+		margin-left: 4rem;
+    margin-right: 4rem;
+    column-count: 3;
+    -moz-column-count: 3;
+		-webkit-column-count: 3;
+		-o-column-count: 3;
+		@media screen and (max-width: $breakpoint-ltab) {
+			margin-left: 2rem;
+			margin-right: 2rem;
+		}
+		@media screen and (max-width: $breakpoint-ptab) {
+			margin-left: 1rem;
+			margin-right: 1rem;
+			column-count: 2;
+			-moz-column-count: 2;
+			-webkit-column-count: 2;
+			-o-column-count: 2;
+		}
+		@media screen and (max-width: $breakpoint-mob) {
+			column-count: 1;
+			-moz-column-count: 1;
+			-webkit-column-count: 1;
+			-o-column-count: 1;
+			text-align: center;
+		}
 		.song {
 			&-wrapper {
-				margin-top: 1rem;
 				margin-bottom: 1rem;
-				display: flex;
-				.artist,
-				.title {
-					width: 50%;
-				}
-				.title {
-					text-align: right;
-				}
-				.artist {
-					padding-left: 1rem;
-				}
+			}
+			&-artist {
+				font-style: italic;
 			}
 		}
 	}
