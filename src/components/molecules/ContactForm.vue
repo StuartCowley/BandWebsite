@@ -48,6 +48,7 @@
 					name="textarea"
 					placeholder="Your message here..."
 					required=""
+					rows="4"
           v-model="message.text"
 				/>
       </div>
@@ -55,7 +56,7 @@
         <input
 					class="contact-form__submit"
 					type="submit"
-					value="Submit message"
+					value="Submit"
 				>
       </div>
 		</form>

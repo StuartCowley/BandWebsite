@@ -20,6 +20,14 @@
 							</div>
 						</div>
 					</div>
+					<div class="songlist-page__body songlist-page__cta-block">
+						<div class="songlist-page__copy">
+							Have a question about reportoire? Is there a certain song you would like us to perform for our event? Get in touch!
+						</div>
+						<div class="songlist-page__cta-wrap">
+							<CTA class="songlist-page__cta" label="Contact us" link="contact" />
+						</div>
+					</div>
 				</div>
 			</template>
 
@@ -28,12 +36,14 @@
 </template>
 
 <script>
-import SecondaryLayout from './SecondaryLayout'
+import CTA from '../atoms/CTA.vue';
+import SecondaryLayout from './SecondaryLayout';
 import songs from '../../data/songs.json';
 
 export default {
 	name: 'SongListPage',
 	components: {
+		CTA,
 		SecondaryLayout
 	},
 	computed: {
@@ -51,19 +61,34 @@ $c: ".songlist-page";
 #{$c}
 {
 	@include secondary-page-layout;
+
 	&__header {
 		@include secondary-page-heading;
 	}
+
 	&__body {
 		@include secondary-page-body;
 		padding-top: 20px;
+		padding-bottom: 20px;
 		padding-left: 20px;
 		padding-right: 20px;
+		margin-bottom: 20px;
 	}
+
 	&__copy {
 		@include copy;
 		text-align: center;
 	}
+
+	&__cta {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 1rem;
+		&-wrap {
+			display: flex;
+		}
+	}
+
 	&__table {
     margin-top: 2rem;
     margin-bottom: 2rem;
