@@ -54,19 +54,13 @@ $c: ".songlist-page";
 {
 	@include secondary-page-layout;
 	&__header {
-		@include heading;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		background-color: $almostBlack;
-		opacity: 0.9;
-		text-align: center;
-		color: $mainGold;
+		@include secondary-page-heading;
 	}
 	&__body {
+		@include secondary-page-body;
 		padding-top: 20px;
-		padding-bottom: 20px;
-		background-color: $offWhite;
-		color: $black;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 	&__copy {
 		@include copy;

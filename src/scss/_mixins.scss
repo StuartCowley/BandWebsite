@@ -47,6 +47,28 @@
 	}
 }
 
+@mixin secondary-page-heading() {
+	@include heading;
+	display: inline-block;
+	background-color: $almostBlack;
+	opacity: 0.9;
+	text-align: center;
+	color: $mainGold;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	border-radius: 40px;
+	border: $mainGold 4px solid;
+}
+
+@mixin secondary-page-body() {
+	background-color: $almostBlack;
+    border: 4px solid $mainGold;
+    border-radius: 40px;
+    color: $mainGold;
+}
+
 // Hover events
 @mixin hover--colors($primary-color, $secondary-color) {
 	transition: $base-trans-speed color ease-in-out, $base-trans-speed border-color ease-in-out;

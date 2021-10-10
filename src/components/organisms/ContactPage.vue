@@ -42,20 +42,12 @@ $c: ".contact-page";
 #{$c}
 {
 	@include secondary-page-layout;
+
 	&__header {
-		@include heading;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		background-color: $almostBlack;
-		opacity: 0.9;
-		text-align: center;
-		color: $mainGold;
+		@include secondary-page-heading;
 	}
 	&__body {
-		padding-top: 20px;
-		padding-bottom: 20px;
-		background-color: $offWhite;
-		color: $black;
+		@include secondary-page-body;
 	}
 	&__form-wrap {
 		max-width: 800px;
