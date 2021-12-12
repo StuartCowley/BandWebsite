@@ -33,13 +33,12 @@ $c: ".secondary-layout";
 
 #{$c}
 {
-	@include secondary-page-layout;
 	display: flex;
 	@include header--padding;
 	flex-flow: column;
 	min-height: 100%;
 	background: url('../../assets/blur-abstract-black-hexagon-mesh-pattern-background_33869-397.jpg');
-	background-size: 100%;
+	background-size: cover;
 	background-attachment: fixed;
 
 	&__title-wrap {

@@ -60,8 +60,6 @@ $c: ".songlist-page";
 
 #{$c}
 {
-	@include secondary-page-layout;
-
 	&__content-block {
 		@include framed-content-block;
 	}
