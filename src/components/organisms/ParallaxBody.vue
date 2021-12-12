@@ -20,12 +20,12 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial bgImage="bride-1.jpg">
+			<Testimonial :bgImage="testimonials[0].image">
 				<template v-slot:quote>
-					The Bees Knees were amazing, a highlight of the day for me. They played the best songs and I was so impressed with their version of Etta James ‘At Last’ it was such a beautiful moment for me and my husband.
+					{{testimonials[0].copy}}
 				</template>
 				<template v-slot:attribution>
-					- Elaine M, 2019
+					- {{testimonials[0].author}}, {{testimonials[0].date}}
 				</template>
 			</Testimonial>
 		</div>
@@ -46,12 +46,12 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial :reverse="true" bgImage="bride-2.jpg">
+			<Testimonial :reverse="true" :bgImage="testimonials[1].image">
 				<template v-slot:quote>
-					AMAZING!! This band were absolutely incredible. We picked the Bees Knees because of Lauren’s voice and their varied set list. They exceeded all expectations and kept our wedding dancing all night. All the guests said what an amazing band we had and they really helped make our wedding so wonderful. They happily learnt our first dance song and even played requests from guests. Thank you Bees Knees!!
+					{{testimonials[1].copy}}
 				</template>
 				<template v-slot:attribution>
-					- Philip S, 2019
+					- {{testimonials[1].author}}, {{testimonials[1].date}}
 				</template>
 			</Testimonial>
 		</div>
@@ -75,12 +75,12 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial bgImage="crowd.jpg">
+			<Testimonial :bgImage="testimonials[2].image">
 				<template v-slot:quote>
-					Absolutely fantastic from start to finish! They entertained on four different nights for us for a total of 32 different groups , and the feedback from all was outstanding! Not only would I recommend these guys but would have them back in a heartbeat! Awesome !
+					{{testimonials[2].copy}}
 				</template>
 				<template v-slot:attribution>
-					- Donald B, 2019
+					- {{testimonials[2].author}}, {{testimonials[2].date}}
 				</template>
 			</Testimonial>
 		</div>
@@ -107,6 +107,8 @@ import Testimonial from '../atoms/Testimonial'
 import Panel from '../molecules/Panel'
 import Footer from '../organisms/Footer'
 
+import TestimonialList from "../../data/testimonials.json";
+
 export default {
 	name: 'ParallaxBody',
 	components: {
@@ -125,11 +127,11 @@ export default {
 			default: false,
 		}
 	},
-	// computed: {
-	// 	burgerOpen() {
-	// 		return this.$store.state.burgerOpen
-	// 	}
-	// },
+	computed: {
+		testimonials() {
+			return TestimonialList
+		}
+	},
 	created: function()
 	{
 	},

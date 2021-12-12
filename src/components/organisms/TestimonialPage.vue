@@ -8,13 +8,14 @@
 			</template>
 
 			<template v-slot:content>
-				<div class="testimonial-page__content-block">
+				<div class="testimonial-page__content-block"
+					v-for="testimonial in testimonials" :key="testimonial.id">
 					<BasicTestimonial>
 						<template v-slot:quote>
-							AMAZING!! This band were absolutely incredible. We picked the Bees Knees because of Lauren’s voice and their varied set list. They exceeded all expectations and kept our wedding dancing all night. All the guests said what an amazing band we had and they really helped make our wedding so wonderful. They happily learnt our first dance song and even played requests from guests. Thank you Bees Knees!!
+							{{testimonial.copy}}
 						</template>
 						<template v-slot:attribution>
-							- Philip S, 2019
+							- {{testimonial.author}}
 						</template>
 					</BasicTestimonial>
 				</div>
@@ -27,12 +28,19 @@
 import BasicTestimonial from '../atoms/BasicTestimonial.vue'
 import SecondaryLayout from './SecondaryLayout'
 
+import TestimonialList from '../../data/testimonials.json';
+
 export default {
 	name: 'TestimonialPage',
 	components: {
 		BasicTestimonial,
 		SecondaryLayout
 	},
+	computed: {
+		testimonials() {
+			return TestimonialList
+		}
+	}
 }
 </script>
 
