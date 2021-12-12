@@ -3,14 +3,14 @@
 		<SecondaryLayout>
 
 			<template v-slot:title>
-				<div class="songlist-page__header">
+				<div class="secondary-layout__title">
 					Current Repertoire
 				</div>
 			</template>
 
 			<template v-slot:content>
-				<div class="page-container">
-					<div class="songlist-page__body">
+				<div class="secondary-layout__content">
+					<div class="songlist-page__content-block">
 						<div class="songlist-page__copy">
 							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad quos fugiat quae, earum asperiores pariatur odit rem nobis labore nostrum facilis itaque aspernatur debitis fugit quibusdam praesentium harum recusandae nulla.
 						</div>
@@ -20,7 +20,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="songlist-page__body songlist-page__cta-block">
+					<div class="songlist-page__content-block songlist-page__cta-block">
 						<div class="songlist-page__copy">
 							Have a question about reportoire? Is there a certain song you would like us to perform for our event? Get in touch!
 						</div>
@@ -60,19 +60,8 @@ $c: ".songlist-page";
 
 #{$c}
 {
-	@include secondary-page-layout;
-
-	&__header {
-		@include secondary-page-heading;
-	}
-
-	&__body {
-		@include secondary-page-body;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		padding-left: 20px;
-		padding-right: 20px;
-		margin-bottom: 20px;
+	&__content-block {
+		@include framed-content-block;
 	}
 
 	&__copy {

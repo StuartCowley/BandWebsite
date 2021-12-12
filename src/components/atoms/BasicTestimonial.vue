@@ -29,10 +29,6 @@ export default {
 
 $c:'.basic-testimonial';
 #{$c} {
-	.page-container {
-		padding-left: 3.5rem;
-		padding-right: 3.5rem;
-	}
 	&-wrap {
 		text-align: center;
 	}

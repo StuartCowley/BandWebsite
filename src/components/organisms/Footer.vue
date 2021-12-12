@@ -74,9 +74,6 @@ $c: ".footer";
 	}
 
 	.page-container {
-		max-width: $page-width;
-		margin-left: auto;
-		margin-right: auto;
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}

@@ -3,11 +3,19 @@
 		<SecondaryLayout>
 
 			<template v-slot:title>
-				title here
+				<div class="secondary-layout__title">
+					About the band
+				</div>
 			</template>
 
 			<template v-slot:content>
-				About content
+				<div class="secondary-layout__content">
+					<div class="about-page__content-block">
+						<div class="about-page__copy">
+							Some content
+						</div>
+					</div>
+				</div>
 			</template>
 
 		</SecondaryLayout>
@@ -32,5 +40,14 @@ $c: ".about-page";
 #{$c}
 {
 	@include secondary-page-layout;
+
+	&__content-block {
+		@include framed-content-block;
+	}
+
+	&__copy {
+		@include copy;
+		text-align: center;
+	}
 }
 </style>

@@ -3,11 +3,19 @@
 		<SecondaryLayout>
 
 			<template v-slot:title>
-				title here
+				<div class="secondary-layout__title">
+					FAQs
+				</div>
 			</template>
 
 			<template v-slot:content>
-				FAQ content
+				<div class="secondary-layout__content">
+					<div class="faq-page__content-block">
+						<div class="faq-page__copy">
+							FAQ content
+						</div>
+					</div>
+				</div>
 			</template>
 
 		</SecondaryLayout>
@@ -32,5 +40,14 @@ $c: ".faq-page";
 #{$c}
 {
 	@include secondary-page-layout;
+
+	&__content-block {
+		@include framed-content-block;
+	}
+
+	&__copy {
+		@include copy;
+		text-align: center;
+	}
 }
 </style>

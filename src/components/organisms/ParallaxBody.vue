@@ -179,8 +179,6 @@ export default {
 			&--parallax {
 				transform: translateZ(1px) scale(0.85);
 				.page-container {
-					padding-left: 4rem;
-					padding-right: 4rem;
 					@media screen and (max-width: $breakpoint-mob){
 						padding-left: 1rem;
 						padding-right: 1rem;

@@ -1,25 +1,22 @@
 <template>
 	<div class="testimonial">
-		<div class="page-container">
-			<div class="grid grid--middle" :class="{'grid--reverse': reverse}">
-				<div class="grid__item z--2" :class="{'one-half': $mq == 'desk' || $mq == 'max' }">
-					<div class="testimonial-wrap">
-						<div class="testimonial__content">
-							<slot name="quote"></slot>
-						</div>
-						<div class="testimonial__attribution">
-							<slot name="attribution"></slot>
-						</div>
+		<div class="grid grid--middle" :class="{'grid--reverse': reverse}">
+			<div class="grid__item z--2" :class="{'one-half': $mq == 'desk' || $mq == 'max' }">
+				<div class="testimonial-wrap">
+					<div class="testimonial__content">
+						<slot name="quote"></slot>
+					</div>
+					<div class="testimonial__attribution">
+						<slot name="attribution"></slot>
 					</div>
 				</div>
-				<div
-					class="testimonial__image"
-					:class="{'testimonial__image--fill': $mq == 'mob' || $mq == 'ptab' || $mq == 'ltab' }"
-					:style="{backgroundImage: `url(${image})` }">
-				</div>
+			</div>
+			<div
+				class="testimonial__image"
+				:class="{'testimonial__image--fill': $mq == 'mob' || $mq == 'ptab' || $mq == 'ltab' }"
+				:style="{backgroundImage: `url(${image})` }">
 			</div>
 		</div>
-
 	</div>
 </template>
 
@@ -48,10 +45,9 @@ export default {
 
 $c:'.testimonial';
 #{$c} {
-	.page-container {
-		padding-left: 3.5rem;
-		padding-right: 3.5rem;
-	}
+	padding-left: 3.5rem;
+	padding-right: 3.5rem;
+
 	&-wrap {
 		text-align: center;
 	}
