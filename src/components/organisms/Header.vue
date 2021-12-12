@@ -86,6 +86,13 @@ $c: ".header";
 
 	display: flex;
   align-items: center;
+	@media screen and (max-width: $breakpoint-mob) {
+		// Keep override the standard media query to not change behaviour
+		.page-container {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+	}
 
 	&--small {
 		height: $header-height-small;

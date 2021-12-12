@@ -145,6 +145,10 @@ $css-variables: (
 	padding-right: 2rem;
 	width: 100%;
 	box-sizing: border-box;
+	@media screen and (max-width: $breakpoint-mob){
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 // Initialise

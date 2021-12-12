@@ -2,23 +2,21 @@
 	<div class="testimonial-page">
 		<SecondaryLayout>
 			<template v-slot:title>
-				<div class="testimonial-page__header">
+				<div class="secondary-layout__title">
 					Testimonials
 				</div>
 			</template>
 
 			<template v-slot:content>
-				<div class="page-container">
-					<div class="testimonial-page__body">
-						<BasicTestimonial>
-							<template v-slot:quote>
-								AMAZING!! This band were absolutely incredible. We picked the Bees Knees because of Lauren’s voice and their varied set list. They exceeded all expectations and kept our wedding dancing all night. All the guests said what an amazing band we had and they really helped make our wedding so wonderful. They happily learnt our first dance song and even played requests from guests. Thank you Bees Knees!!
-							</template>
-							<template v-slot:attribution>
-								- Philip S, 2019
-							</template>
-						</BasicTestimonial>
-					</div>
+				<div class="testimonial-page__content-block">
+					<BasicTestimonial>
+						<template v-slot:quote>
+							AMAZING!! This band were absolutely incredible. We picked the Bees Knees because of Lauren’s voice and their varied set list. They exceeded all expectations and kept our wedding dancing all night. All the guests said what an amazing band we had and they really helped make our wedding so wonderful. They happily learnt our first dance song and even played requests from guests. Thank you Bees Knees!!
+						</template>
+						<template v-slot:attribution>
+							- Philip S, 2019
+						</template>
+					</BasicTestimonial>
 				</div>
 			</template>
 		</SecondaryLayout>
@@ -46,18 +44,9 @@ $c: ".testimonial-page";
 {
 	@include secondary-page-layout;
 
-	&__header {
-		@include secondary-page-heading;
-	}
-
-	&__body {
-		@include secondary-page-body;
+	&__content-block {
+		@include framed-content-block;
 		position: relative;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		padding-left: 20px;
-		padding-right: 20px;
-		margin-bottom: 20px;
 	}
 
 	&__copy {

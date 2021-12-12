@@ -1,12 +1,14 @@
 <template>
 	<div class="secondary-layout">
 
-		<div class="secondary-layout__title">
+		<div class="secondary-layout__title-wrap">
 			<slot name="title" />
 		</div>
 
-		<div class="secondary-layout__content">
-			<slot name="content" />
+		<div class="secondary-layout__content-wrap">
+			<div class="page-container">
+				<slot name="content" />
+			</div>
 		</div>
 
 		<Footer />
@@ -31,14 +33,16 @@ $c: ".secondary-layout";
 
 #{$c}
 {
+	@include secondary-page-layout;
 	display: flex;
-	flex-flow: column;
 	@include header--padding;
+	flex-flow: column;
 	min-height: 100%;
 	background: url('../../assets/blur-abstract-black-hexagon-mesh-pattern-background_33869-397.jpg');
 	background-size: 100%;
+	background-attachment: fixed;
 
-	&__title {
+	&__title-wrap {
     display: flex;
     justify-content: center;
 		margin-top: 1rem;
@@ -46,15 +50,25 @@ $c: ".secondary-layout";
 		font: $heading-font-family;
 	}
 
+	&__title {
+		@include secondary-page-heading;
+	}
+
 	&__content {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-bottom: 20px;
+		@media screen and (max-width: $breakpoint-mob){
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&__content-wrap {
 		flex: 1;
 		margin-bottom: 2rem;
-		.page-container	{
-			@media screen and (max-width: $breakpoint-mob){
-				padding-left: 0;
-				padding-right: 0;
-			}
-		}
 	}
 }
 </style>

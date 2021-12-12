@@ -3,17 +3,15 @@
 		<SecondaryLayout>
 
 			<template v-slot:title>
-				<div class="contact-page__header">
+				<div class="secondary-layout__title">
 					Contact Us
 				</div>
 			</template>
 
 			<template v-slot:content>
-				<div class="page-container">
-					<div class="contact-page__body">
-						<div class="contact-page__form-wrap">
-							<ContactForm />
-						</div>
+				<div class="contact-page__content-block">
+					<div class="contact-page__form-wrap">
+						<ContactForm />
 					</div>
 				</div>
 			</template>
@@ -43,17 +41,16 @@ $c: ".contact-page";
 {
 	@include secondary-page-layout;
 
-	&__header {
-		@include secondary-page-heading;
+	&__content-block {
+		@include framed-content-block;
 	}
-	&__body {
-		@include secondary-page-body;
-	}
-	&__form-wrap {
+
+&__form-wrap {
 		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
-}
+	}
+
 	&__copy {
 		@include copy;
 		text-align: center;
