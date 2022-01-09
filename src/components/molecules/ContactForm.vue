@@ -3,13 +3,14 @@
 		<div class="contact-form__header">
 			Have a question? Please get in touch!
 		</div>
-		<form class="contact-form__form">
+		<form ref="form" @submit.prevent="sendEmail" class="contact-form__form">
+			<input type="hidden" name="enquiry_number" :value="enquiry_number">
 			<div class="contact-form__element">
 				<label class="contact-form__label" for="name">Name</label>
 				<input
 					class="contact-form__input"
 					id="name"
-					name="name"
+					name="from_name"
 					placeholder="Enter your name..."
 					required=""
 					type="text"
@@ -22,7 +23,7 @@
 					class="contact-form__input"
           :class="{ email , error: !email.valid }"
 					id="email"
-					name="email"
+					name="user_email"
 					placeholder="Enter your email..."
 					required=""
 					type="email"
@@ -30,13 +31,23 @@
 				/>
       </div>
 			<div class="contact-form__element">
+        <label class="contact-form__label" for="phone_number">Phone Number</label>
+        <input
+					class="contact-form__input"
+					id="phone_number"
+					name="user_phone_number"
+					placeholder="Enter contact number..."
+					v-model="phone_number"
+				/>
+      </div>
+			<div class="contact-form__element">
 				<label class="contact-form__label" for="select">What is your query about?</label>
-				<select class="contact-form__input" id="select">
+				<select class="contact-form__input" name="subject" id="select">
 					<option value="" disabled selected>Select your option:</option>
-					<option value="1">Booking the band / Availability</option>
-					<option value="2">Available line-ups</option>
-					<option value="3">Special song requests</option>
-					<option value="4">Something else</option>
+					<option value="Booking the band / Availability">Booking the band / Availability</option>
+					<option value="Available line-ups">Available line-ups</option>
+					<option value="Special song requests">Special song requests</option>
+					<option value="Something else">Something else</option>
 				</select>
       </div>
 			<div class="contact-form__element">
@@ -44,7 +55,7 @@
 					class="contact-form__input"
 					id="textarea"
 					:maxlength="message.maxlength"
-					name="textarea"
+					name="message"
 					placeholder="Your message here..."
 					required=""
 					rows="4"
@@ -54,8 +65,10 @@
       <div class="contact-form__element">
         <input
 					class="contact-form__submit"
+					:class="{'disabled': !isRequiredDataPresent }"
 					type="submit"
 					value="Submit"
+					:disabled="!isRequiredDataPresent"
 				>
       </div>
 		</form>
@@ -63,9 +76,9 @@
 </template>
 
 <script>
+import emailjs from '@emailjs/browser';
 
 export default {
-	// todo finish this, similar example here https://codepen.io/netzzwerg/pen/VQKBPQ
 	name: 'ContactForm',
 	data: () => {
 		return {
@@ -74,6 +87,7 @@ export default {
         value: "",
         valid: false
       },
+			phone_number: "",
       message: {
         text: "",
         maxlength: 255
@@ -81,15 +95,31 @@ export default {
       submitted: false,
     };
 	},
+	computed: {
+		enquiry_number() {
+			return Math.random() * 100000 | 0
+		},
+		isRequiredDataPresent() {
+			return (
+				this.name !== "" &&
+				this.message.text !== "" &&
+				this.email.valid
+			)
+		}
+	},
 	methods: {
 		isEmailValid: function() {
 			const emailRegExp = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-			if (emailRegExp.test(this.email.value)) {
-				this.email.valid = true;
-			} else {
-				this.email.valid = false;
-			}
-		}
+			this.email.valid = emailRegExp.test(this.email.value);
+		},
+		sendEmail() {
+			emailjs.sendForm(process.env.VUE_APP_EMAIL_SERVICE, process.env.VUE_APP_EMAIL_CONTACT, this.$refs.form, process.env.VUE_APP_EMAIL_ID)
+				.then((result) => {
+						console.log('SUCCESS!', result.text); // @TODO Add a proper logger here
+				}, (error) => {
+						console.log('FAILED...', error.text);
+				});
+		},
 	},
 	watch: {
 		"email.value": function() {
@@ -135,6 +165,9 @@ $c: ".contact-form";
 		margin-bottom: 1rem;
 		@media screen and (max-width: $breakpoint-ptab) {
 			flex-direction: column;
+		}
+		.disabled {
+			opacity: 0.25;
 		}
 	}
 

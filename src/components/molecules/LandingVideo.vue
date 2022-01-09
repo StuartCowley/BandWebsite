@@ -18,9 +18,6 @@ export default {
 	name: "LandingVideo",
 	components: {
 		ScreenFill,
-	},
-	computed: {
-
 	}
 };
 </script>
