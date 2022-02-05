@@ -3,7 +3,7 @@
 		<div class="contact-form__header">
 			Have a question? Please get in touch!
 		</div>
-		<form ref="form" @submit.prevent="sendEmail" class="contact-form__form">
+		<form ref="form" @submit.prevent="handleSubmit" class="contact-form__form">
 			<input type="hidden" name="enquiry_number" :value="enquiry_number">
 			<div class="contact-form__element">
 				<label class="contact-form__label" for="name">Name</label>
@@ -12,7 +12,7 @@
 					id="name"
 					name="from_name"
 					placeholder="Enter your name..."
-					required=""
+					required
 					type="text"
 					v-model="name"
 				/>
@@ -20,12 +20,11 @@
       <div class="contact-form__element">
         <label class="contact-form__label" for="email">Email</label>
         <input
-					class="contact-form__input"
-          :class="{ email , error: !email.valid }"
+					class="contact-form__input email"
 					id="email"
 					name="user_email"
 					placeholder="Enter your email..."
-					required=""
+					required
 					type="email"
           v-model="email.value"
 				/>
@@ -38,6 +37,7 @@
 					name="user_phone_number"
 					placeholder="Enter contact number..."
 					v-model="phone_number"
+					required
 				/>
       </div>
 			<div class="contact-form__element">
@@ -57,7 +57,7 @@
 					:maxlength="message.maxlength"
 					name="message"
 					placeholder="Your message here..."
-					required=""
+					required
 					rows="4"
           v-model="message.text"
 				/>
@@ -65,10 +65,8 @@
       <div class="contact-form__element">
         <input
 					class="contact-form__submit"
-					:class="{'disabled': !isRequiredDataPresent }"
 					type="submit"
 					value="Submit"
-					:disabled="!isRequiredDataPresent"
 				>
       </div>
 		</form>
@@ -91,8 +89,7 @@ export default {
       message: {
         text: "",
         maxlength: 255
-      },
-      submitted: false,
+      }
     };
 	},
 	computed: {
@@ -101,8 +98,6 @@ export default {
 		},
 		isRequiredDataPresent() {
 			return (
-				this.name !== "" &&
-				this.message.text !== "" &&
 				this.email.valid
 			)
 		}
@@ -114,12 +109,20 @@ export default {
 		},
 		sendEmail() {
 			emailjs.sendForm(process.env.VUE_APP_EMAIL_SERVICE, process.env.VUE_APP_EMAIL_CONTACT, this.$refs.form, process.env.VUE_APP_EMAIL_ID)
-				.then((result) => {
-						console.log('SUCCESS!', result.text); // @TODO Add a proper logger here
+				.then(() => {
+					this.$emit('openModal', 'success');
+					// @TODO Add a proper logger here
 				}, (error) => {
-						console.log('FAILED...', error.text);
+					console.log('FAILED...', error.text);
 				});
 		},
+		handleSubmit() {
+			if (!this.email.valid) {
+				this.$emit('openModal', 'emailInvalid');
+			} else {
+				this.sendEmail();
+			}
+		}
 	},
 	watch: {
 		"email.value": function() {
@@ -165,9 +168,6 @@ $c: ".contact-form";
 		margin-bottom: 1rem;
 		@media screen and (max-width: $breakpoint-ptab) {
 			flex-direction: column;
-		}
-		.disabled {
-			opacity: 0.25;
 		}
 	}
 
