@@ -114,12 +114,20 @@ export default {
 		},
 		sendEmail() {
 			emailjs.sendForm(process.env.VUE_APP_EMAIL_SERVICE, process.env.VUE_APP_EMAIL_CONTACT, this.$refs.form, process.env.VUE_APP_EMAIL_ID)
-				.then((result) => {
-						console.log('SUCCESS!', result.text); // @TODO Add a proper logger here
+				.then(() => {
+					this.$emit('openModal', 'success');
+					// @TODO Add a proper logger here
 				}, (error) => {
-						console.log('FAILED...', error.text);
+					console.log('FAILED...', error.text);
 				});
 		},
+		handleSubmit() {
+			if (!this.email.valid) {
+				this.$emit('openModal', 'emailInvalid');
+			} else {
+				this.sendEmail();
+			}
+		}
 	},
 	watch: {
 		"email.value": function() {

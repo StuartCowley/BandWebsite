@@ -1,5 +1,10 @@
 <template>
 	<div class="contact-page">
+		<Modal
+			:display="this.modal.show"
+			:content="this.modal.message"
+			@closeModal="handleModal"
+		/>
 		<SecondaryLayout>
 
 			<template v-slot:title>
@@ -11,7 +16,7 @@
 			<template v-slot:content>
 				<div class="contact-page__content-block">
 					<div class="contact-page__form-wrap">
-						<ContactForm />
+						<ContactForm @openModal="handleModal" />
 					</div>
 				</div>
 			</template>
@@ -23,12 +28,54 @@
 <script>
 import SecondaryLayout from './SecondaryLayout'
 import ContactForm from '../molecules/ContactForm.vue'
+import Modal from '../molecules/Modal.vue'
 
 export default {
 	name: 'ContactPage',
 	components: {
 		SecondaryLayout,
-		ContactForm
+		ContactForm,
+		Modal
+	},
+	data: () => {
+		return {
+			modal: {
+				show: false,
+				message: {
+					heading: '',
+					body: ''
+				}
+			}
+		}
+	},
+	methods: {
+		handleModal(payload) {
+			if (payload == 'emailInvalid') {
+				this.modal = {
+					show: true,
+					message: {
+						heading: 'Oops!',
+						body: 'Please check your email address is valid!'
+					}
+				}
+			} else if (payload == 'success') {
+				this.modal = {
+					show: true,
+					message: {
+						heading: 'Thanks!',
+						body: 'Your message has been sent'
+					}
+				}
+			} else {
+				this.modal = {
+					show: false,
+					message: {
+						heading: '',
+						body: ''
+					}
+				}
+			}
+		}
 	}
 }
 </script>
