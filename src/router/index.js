@@ -13,12 +13,12 @@ import ContactPage from '../components/organisms/ContactPage'
 export default new VueRouter({
 	mode: 'history',
 	routes: [
-		{ path: '*', redirect: '/' },
 		{ path: '/', component: ParallaxBody },
     { path: '/about-the-band', component: AboutPage },
     { path: '/testimonials', component: TestimonialPage },
     { path: '/frequently-asked-questions', component: FAQPage },
     { path: '/song-list', component: SongListPage },
-    { path: '/contact', component: ContactPage }
+    { path: '/contact', component: ContactPage },
+		{ path: '*', redirect: '/' }
 	]
 })
