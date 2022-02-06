@@ -2,7 +2,7 @@
 	<div class="hero-banner">
 		<ScreenFill class="hero-banner__shaper">
 			<div class="hero-banner__video-wrap">
-				<video class="hero-banner__video" muted loop autoplay>
+				<video class="hero-banner__video" muted loop autoplay playsinline>
 					Sorry, your browser doesn't support embedded videos
 					<source type="video/mp4" src="../../assets/hero-video-comp.mp4" />
 				</video>
