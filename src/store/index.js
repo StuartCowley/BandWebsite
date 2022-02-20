@@ -9,18 +9,18 @@ export default new Vuex.Store({
 		appInitialised: false,
 		burgerOpen: false,
 		menuItems: [
-			{
-				title: 'About',
-				url: '/about-the-band'
-			},
+			// {
+			// 	title: 'About',
+			// 	url: '/about-the-band'
+			// },
 			{
 				title: 'Testimonials',
 				url: '/testimonials'
 			},
-			{
-				title: 'FAQs',
-				url: '/frequently-asked-questions'
-			},
+			// {
+			// 	title: 'FAQs',
+			// 	url: '/frequently-asked-questions'
+			// },
 			{
 				title: 'Song List',
 				url: '/song-list'
