@@ -12,7 +12,7 @@
 				<div class="secondary-layout__content">
 					<div class="songlist-page__content-block">
 						<div class="songlist-page__copy">
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad quos fugiat quae, earum asperiores pariatur odit rem nobis labore nostrum facilis itaque aspernatur debitis fugit quibusdam praesentium harum recusandae nulla.
+							Our current repertoire features songs from 1950s-2020s, a wide range of artists, and a broad list of well known standards and popular songs from many genres. All these songs have been a part of our canon and the list continues to grow:
 						</div>
 						<div class="songlist-page__table">
 							<div class="song-wrapper" v-for="song in songData" :key="song.id">
