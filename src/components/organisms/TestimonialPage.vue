@@ -15,7 +15,7 @@
 							{{testimonial.copy}}
 						</template>
 						<template v-slot:attribution>
-							- {{testimonial.author}}
+							- {{testimonial.author}}, {{testimonial.date}}
 						</template>
 					</BasicTestimonial>
 				</div>
