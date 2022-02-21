@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		showLandingPageOnly: true,
+		showLandingPageOnly: false,
 		appInitialised: false,
 		burgerOpen: false,
 		menuItems: [

@@ -10,7 +10,7 @@
 				<Header :burgerOpen="burgerOpen" />
 				<router-view />
 				<transition name="fade">
-					<div class="faded-background" v-show="burgerOpen"></div>
+					<div class="faded-background" v-show="burgerOpen" @click="handleClick"></div>
 				</transition>
 			</template>
 			<template v-else>
@@ -56,6 +56,11 @@ export default {
 	},
 	mounted: function() {
 		this.$store.dispatch('appLoaded')
+	},
+	methods: {
+		handleClick() {
+			this.$store.dispatch('toggleBurger');
+		}
 	},
 	watch: {
 		currentScreen: function() {
