@@ -1,6 +1,6 @@
 <template>
 	<div class="burger-nav-cross">
-		<input class="burger-nav-cross__input" type="checkbox" @click="$emit('clickedBox')" />
+		<input class="burger-nav-cross__input" type="checkbox" @click="handleClick" />
 		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
 		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
 		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
@@ -16,6 +16,11 @@ export default {
 			default: false,
 		}
 	},
+	methods: {
+		handleClick() {
+			this.$emit('clickedBurgerIcon')
+		}
+	}
 }
 </script>
 

@@ -1,13 +1,13 @@
 <template>
 	<div class="header" :class="{'header--small': $mq == 'mob' || $mq == 'ptab'}">
-		<BurgerMenu :navOpen="burgerOpen" />
+		<BurgerMenu @menuItemClicked="toggleNav" :navOpen="burgerOpen" />
 
 		<div class="page-container">
 
 			<div class="grid grid--middle grid--spread">
 
 				<div class="grid__item" :class="{'grid__item--hide': $mq == 'ltab' ||  $mq == 'desk' || $mq == 'max' }">
-					<BurgerNavCross @clickedBox="toggleNav" class="header__burger" :navOpen="burgerOpen" />
+					<BurgerNavCross @clickedBurgerIcon="toggleNav" class="header__burger" :navOpen="burgerOpen" />
 				</div>
 
 				<div class="grid__item" :class="{'grid__item--hide': $mq == 'mob' ||  $mq == 'ptab' }">
