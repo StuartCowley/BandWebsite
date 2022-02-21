@@ -20,12 +20,12 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial :bgImage="testimonials[1].image">
+			<Testimonial :bgImage="testimonials[7].image">
 				<template v-slot:quote>
-					{{testimonials[1].copy}}
+					{{testimonials[7].copy}}
 				</template>
 				<template v-slot:attribution>
-					- {{testimonials[1].author}}, {{testimonials[1].date}}
+					- {{testimonials[7].author}}, {{testimonials[7].date}}
 				</template>
 			</Testimonial>
 		</div>
@@ -46,12 +46,12 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial :reverse="true" :bgImage="testimonials[2].image">
+			<Testimonial :reverse="true" :bgImage="testimonials[8].image">
 				<template v-slot:quote>
-					{{testimonials[2].copy}}
+					{{testimonials[8].copy}}
 				</template>
 				<template v-slot:attribution>
-					- {{testimonials[2].author}}, {{testimonials[2].date}}
+					- {{testimonials[8].author}}, {{testimonials[8].date}}
 				</template>
 			</Testimonial>
 		</div>
@@ -75,12 +75,12 @@
 			</div>
 		</div>
 		<div class="parallax-body__section parallax-body__section--static">
-			<Testimonial :bgImage="testimonials[3].image">
+			<Testimonial :bgImage="testimonials[9].image">
 				<template v-slot:quote>
-					{{testimonials[3].copy}}
+					{{testimonials[9].copy}}
 				</template>
 				<template v-slot:attribution>
-					- {{testimonials[3].author}}, {{testimonials[3].date}}
+					- {{testimonials[9].author}}, {{testimonials[9].date}}
 				</template>
 			</Testimonial>
 		</div>
