@@ -29,8 +29,9 @@ import LandingPage from './components/organisms/LandingPage'
 
 export default {
 	name: 'App',
-	data() {
-		return {}
+	metaInfo: {
+		title: 'The Bees Knees - Professional Party Band from Manchester',
+		titleTemplate: '%s | Available for any event across the country | Special requests catered for | Line-up tailored to your needs'
 	},
   components: {
 		Header,
