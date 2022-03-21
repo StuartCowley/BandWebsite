@@ -29,7 +29,7 @@ export default new Vuex.Store({
 			{
 				title: 'Contact',
 				url: '/contact'
-			},
+			}
 		]
 	},
 	mutations: {

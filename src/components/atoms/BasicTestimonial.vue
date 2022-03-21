@@ -10,11 +10,6 @@
 				</div>
 			</div>
 		</div>
-		<div
-			class="basic-testimonial__image"
-			:class="{'basic-testimonial__image--fill': $mq == 'mob' || $mq == 'ptab' || $mq == 'ltab' }"
-			:style="{backgroundImage: `url(${image})` }">
-		</div>
 	</div>
 </template>
 

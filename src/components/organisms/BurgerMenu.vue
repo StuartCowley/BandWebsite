@@ -1,6 +1,6 @@
 <template>
 	<div class="burger-menu" :class="{'burger-menu--open': navOpen}">
-		<div class="burger-menu__items">
+		<div class="burger-menu__items" @click="handleClick">
 			<router-link to="/">
 				<Logo class="burger-menu__logo" />
 				<div class="burger-menu__logo-title">
@@ -11,8 +11,8 @@
 				{{item.title}}
 			</router-link>
 			<div class="burger-menu__socials">
-				<SocialItem link="http://www.facebook.com" :logo="require('../../assets/icon-facebook.svg')" />
-				<SocialItem link="http://www.google.com" :logo="require('../../assets/icon-mail.svg')" />
+				<SocialItem link="https://www.facebook.com/thebeeskneesuk" :logo="require('../../assets/icon-facebook.svg')" />
+				<SocialItem link="contact" :logo="require('../../assets/icon-mail.svg')" />
 			</div>
 		</div>
 	</div>
@@ -32,6 +32,11 @@ export default {
 		navOpen: {
 			type: Boolean,
 			default: false,
+		}
+	},
+	methods: {
+		handleClick() {
+			this.$emit('menuItemClicked')
 		}
 	},
 	computed: {
