@@ -9,10 +9,7 @@ export default new Vuex.Store({
 		appInitialised: false,
 		burgerOpen: false,
 		menuItems: [
-			{
-				title: 'Song List',
-				url: '/song-list'
-			},
+			// TODO Add these pages back in when content is ready
 			// {
 			// 	title: 'About',
 			// 	url: '/about-the-band'
@@ -25,6 +22,10 @@ export default new Vuex.Store({
 			// 	title: 'FAQs',
 			// 	url: '/frequently-asked-questions'
 			// },
+			{
+				title: 'Song List',
+				url: '/song-list'
+			},
 			{
 				title: 'Contact',
 				url: '/contact'
