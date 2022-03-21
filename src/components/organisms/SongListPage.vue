@@ -22,7 +22,7 @@
 					</div>
 					<div class="songlist-page__content-block songlist-page__cta-block">
 						<div class="songlist-page__copy">
-							Have a question about reportoire? Is there a certain song you would like us to perform for our event? Get in touch!
+							Have a question about our reportoire? Is there a certain song you would like us to perform for your event? Get in touch!
 						</div>
 						<div class="songlist-page__cta-wrap">
 							<CTA class="songlist-page__cta" label="Contact us" link="contact" />
@@ -42,6 +42,10 @@ import songs from '../../data/songs.json';
 
 export default {
 	name: 'SongListPage',
+	metaInfo: {
+		title: 'The Bees Knees - Professional Party Band from Manchester',
+		titleTemplate: '%s | Our current repertoire | Songs from 1950s - 2020s | Special requests catered for'
+  },
 	components: {
 		CTA,
 		SecondaryLayout

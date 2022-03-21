@@ -37,6 +37,10 @@ export default {
 		ContactForm,
 		Modal
 	},
+	metaInfo: {
+		title: 'The Bees Knees - Professional Party Band from Manchester',
+		titleTemplate: '%s | Contact The Band | Get a quote | Check Availability | Ask us anything!'
+  },
 	data: () => {
 		return {
 			modal: {

@@ -32,6 +32,10 @@ import TestimonialList from '../../data/testimonials.json';
 
 export default {
 	name: 'TestimonialPage',
+	metaInfo: {
+		title: 'The Bees Knees - Professional Party Band from Manchester',
+		titleTemplate: '%s | Reviews from previous clients'
+  },
 	components: {
 		BasicTestimonial,
 		SecondaryLayout

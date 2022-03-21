@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueMq from 'vue-mq'
+import Meta from 'vue-meta'
 import App from './App.vue'
 import store from './store/index'
 import router from './router/index'
@@ -13,6 +14,11 @@ Vue.use(VueMq, {
 		max: 3000
 	}
 })
+
+Vue.use(Meta, {
+  keyName: 'metaInfo',
+  attribute: 'data-vue-meta',
+});
 
 Vue.config.productionTip = false
 

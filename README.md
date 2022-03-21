@@ -1,10 +1,10 @@
 # Band Website
 
-Work in progress. Currently just a landing page, built in VueJS.
+A promotional site for a band built in VueJS, including contact functionality with EmailJS, repertoire and testimonial pages, a parallax home page and responsive design.
 
 ## Future features
-- Parallax layout on home page
 - Transitions and animations throughout
+- Additional content pages including more videos
 - Interactive set list creator
 
 ## Project setup
@@ -21,11 +21,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
