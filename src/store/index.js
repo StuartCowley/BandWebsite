@@ -5,22 +5,23 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		showLandingPageOnly: true,
+		showLandingPageOnly: false,
 		appInitialised: false,
 		burgerOpen: false,
 		menuItems: [
-			{
-				title: 'About',
-				url: '/about-the-band'
-			},
+			// TODO Add these pages back in when content is ready
+			// {
+			// 	title: 'About',
+			// 	url: '/about-the-band'
+			// },
 			{
 				title: 'Testimonials',
 				url: '/testimonials'
 			},
-			{
-				title: 'FAQs',
-				url: '/frequently-asked-questions'
-			},
+			// {
+			// 	title: 'FAQs',
+			// 	url: '/frequently-asked-questions'
+			// },
 			{
 				title: 'Song List',
 				url: '/song-list'
