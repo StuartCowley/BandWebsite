@@ -201,7 +201,7 @@ export default {
 			&--static {
 				height: 65%;
 				overflow: hidden;
-				background: url('../../assets/blur-abstract-black-hexagon-mesh-pattern-background_33869-397.jpg');
+				background: url('../../assets/black-hexagon-mesh.jpg');
 				background-size: 150%;
 			}
 		}
