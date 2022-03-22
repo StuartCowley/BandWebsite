@@ -11,8 +11,15 @@
 				{{item.title}}
 			</router-link>
 			<div class="burger-menu__socials">
-				<SocialItem link="https://www.facebook.com/thebeeskneesuk" :logo="require('../../assets/icon-facebook.svg')" />
-				<SocialItem link="contact" :logo="require('../../assets/icon-mail.svg')" />
+				<SocialItem
+					link="https://www.facebook.com/thebeeskneesuk/"
+					:logo="require('../../assets/icon-facebook.svg')"
+					:linkExternal="true"
+				/>
+				<SocialItem
+					link="contact"
+					:logo="require('../../assets/icon-mail.svg')"
+				/>
 			</div>
 		</div>
 	</div>

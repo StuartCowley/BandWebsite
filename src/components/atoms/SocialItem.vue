@@ -4,6 +4,7 @@
 		class="social-item__wrap"
 		:class="{'social-item__wrap--reverse-colors': reverseColors }"
 		:href="link"
+		target="_blank"
 	>
 		<div class="social-item__logo" v-html="logo"></div>
 	</a>
