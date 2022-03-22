@@ -1,110 +1,111 @@
 @mixin heading() {
-	font-family: $heading-font-family;
-	line-height: 1.2;
-	font-size: 2.4rem;
-	text-shadow: 0 0 10px #000;
-	@media screen and (max-width: $breakpoint-mob) {
-		font-size: 1.4rem;
-	}
+  font-family: $heading-font-family;
+  line-height: 1.2;
+  font-size: 2.4rem;
+  text-shadow: 0 0 10px #000;
+  @media screen and (max-width: $breakpoint-mob) {
+    font-size: 1.4rem;
+  }
 }
 
 @mixin header--padding() {
-	padding-top: $header-height;
-	@media screen and (max-width: $breakpoint-ptab) {
-		padding-top: $header-height-small;
-	}
+  padding-top: $header-height;
+  @media screen and (max-width: $breakpoint-ptab) {
+    padding-top: $header-height-small;
+  }
 }
 
 @mixin copy() {
-	font-size: 1.4rem;
-	line-height: 1.5;
-	@media screen and (max-width: $breakpoint-ptab) {
-		font-size: 1.2rem;
-	}
+  font-size: 1.4rem;
+  line-height: 1.5;
+  @media screen and (max-width: $breakpoint-ptab) {
+    font-size: 1.2rem;
+  }
 }
 
 @mixin cta() {
-	display: inline-block;
-	color: #e9e9e9;
-	background-color: #ff8800;
-	letter-spacing: 0.5rem;
-	text-align: center;
-	padding-top: 16px;
-	padding-bottom: 16px;
-	padding-left: 48px;
-	padding-right: 48px;
-	border-radius: 40px;
-	text-transform: uppercase;
-	font-size: 1.6rem;
-	@media screen and (max-width: $breakpoint-mob) {
-		font-size: 1rem;
-	}
+  display: inline-block;
+  color: #e9e9e9;
+  background-color: #ff8800;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 48px;
+  padding-right: 48px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  @media screen and (max-width: $breakpoint-mob) {
+    font-size: 1rem;
+  }
 }
 
 @mixin secondary-page-layout() {
-	height: calc(100vh - #{$header-height});
-	@media screen and (max-width: $breakpoint-ptab) {
-		height: calc(100vh - #{$header-height-small});
-	}
+  height: calc(100vh - #{$header-height});
+  @media screen and (max-width: $breakpoint-ptab) {
+    height: calc(100vh - #{$header-height-small});
+  }
 }
 
 @mixin secondary-page-heading() {
-	@include heading;
-	display: inline-block;
-	background-color: $almostBlack;
-	opacity: 0.9;
-	text-align: center;
-	color: $mainGold;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 40px;
-	padding-right: 40px;
-	border-radius: 40px;
-	border: $mainGold 4px solid;
+  @include heading;
+  display: inline-block;
+  background-color: $almostBlack;
+  opacity: 0.9;
+  text-align: center;
+  color: $mainGold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 40px;
+  border: $mainGold 4px solid;
 }
 
 @mixin framed-content-block() {
-	background-color: $almostBlack;
-	border: 4px solid $mainGold;
-	border-radius: 40px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin-bottom: 20px;
-	color: $mainGold;
+  background-color: $almostBlack;
+  border: 4px solid $mainGold;
+  border-radius: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+  color: $mainGold;
 }
 
 // Hover events
 @mixin hover--colors($primary-color, $secondary-color) {
-	transition: $base-trans-speed color ease-in-out, $base-trans-speed border-color ease-in-out;
-	&:hover {
-		border-color: $secondary-color;
-		color: $secondary-color;
-	}
-	&--reverse-colors {
-		color: $secondary-color;
-		border-color: $secondary-color;
-		&:hover {
-			border-color: $primary-color;
-			color: $primary-color;
-		}
-	}
+  transition: $base-trans-speed color ease-in-out,
+    $base-trans-speed border-color ease-in-out;
+  &:hover {
+    border-color: $secondary-color;
+    color: $secondary-color;
+  }
+  &--reverse-colors {
+    color: $secondary-color;
+    border-color: $secondary-color;
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
 }
 
 @mixin underline() {
-	&::after {
-		content: '';
-		display: block;
-		background-color: $mainGold;
-		width: 0%;
-		height: 2px;
-		position: absolute;
-		margin: auto;
-		bottom: 0;
-		transition: width $base-trans-speed;
-	}
-	&:hover::after {
-		width: 100%;
-	}
+  &::after {
+    content: "";
+    display: block;
+    background-color: $mainGold;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    margin: auto;
+    bottom: 0;
+    transition: width $base-trans-speed;
+  }
+  &:hover::after {
+    width: 100%;
+  }
 }

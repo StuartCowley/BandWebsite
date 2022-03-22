@@ -1,85 +1,97 @@
 <template>
-	<div class="burger-nav-cross">
-		<input class="burger-nav-cross__input" type="checkbox" @click="handleClick" />
-		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
-		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
-		<span class="burger-nav-cross__span" :class="{'burger-nav-cross__span--open': navOpen}"></span>
-	</div>
+  <div class="burger-nav-cross">
+    <input
+      class="burger-nav-cross__input"
+      type="checkbox"
+      @click="handleClick"
+    />
+    <span
+      class="burger-nav-cross__span"
+      :class="{ 'burger-nav-cross__span--open': navOpen }"
+    ></span>
+    <span
+      class="burger-nav-cross__span"
+      :class="{ 'burger-nav-cross__span--open': navOpen }"
+    ></span>
+    <span
+      class="burger-nav-cross__span"
+      :class="{ 'burger-nav-cross__span--open': navOpen }"
+    ></span>
+  </div>
 </template>
 
 <script>
 export default {
-	name: "BurgerNavCross",
-	props: {
-		navOpen: {
-			type: Boolean,
-			default: false,
-		}
-	},
-	methods: {
-		handleClick() {
-			this.$emit('clickedBurgerIcon')
-		}
-	}
-}
+  name: "BurgerNavCross",
+  props: {
+    navOpen: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    handleClick() {
+      this.$emit("clickedBurgerIcon");
+    }
+  }
+};
 </script>
 
 <style lang="scss">
 @import "src/scss/toolkit";
 
-$c:'.burger-nav-cross';
-#{$c}{
-	display: block;
-	width: 24px;
+$c: ".burger-nav-cross";
+#{$c} {
+  display: block;
+  width: 24px;
   position: relative;
   z-index: 100;
   -webkit-user-select: none;
-	user-select: none;
+  user-select: none;
 
-	&__span {
-		display: block;
-		height: 4px;
-		margin-bottom: 4px;
-		position: relative;
-		background: $mainGold;
-		border-radius: 3px;
-		z-index: 1;
-		transform-origin: 4px 0px;
-		transition: transform $base-trans-speed*0.75 cubic-bezier(0.77,0.2,0.05,1.0),
-								opacity $base-trans-speed*0.75 ease;
-		&:last-of-type {
-			margin-bottom: 0;
-			transform-origin: 0% 50%;
-		}
-		&:first-of-type {
-			transform-origin: 0% 0%;
-		}
-		&--open {
-			background: $mainGold;
-			transform: rotate(45deg) translate(1px, -1px);
-			&:nth-of-type(2) {
-				transform: rotate(0deg) scale(0.2, 0.2);
-				opacity: 0;
-			}
-			&:last-of-type {
-				transform: rotate(-45deg) translate(0, 0px);
-			}
-		}
+  &__span {
+    display: block;
+    height: 4px;
+    margin-bottom: 4px;
+    position: relative;
+    background: $mainGold;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform $base-trans-speed * 0.75
+        cubic-bezier(0.77, 0.2, 0.05, 1),
+      opacity $base-trans-speed * 0.75 ease;
+    &:last-of-type {
+      margin-bottom: 0;
+      transform-origin: 0% 50%;
+    }
+    &:first-of-type {
+      transform-origin: 0% 0%;
+    }
+    &--open {
+      background: $mainGold;
+      transform: rotate(45deg) translate(1px, -1px);
+      &:nth-of-type(2) {
+        transform: rotate(0deg) scale(0.2, 0.2);
+        opacity: 0;
+      }
+      &:last-of-type {
+        transform: rotate(-45deg) translate(0, 0px);
+      }
+    }
+  }
 
-	}
+  &__input {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
 
-	&__input {
-		display: block;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		margin: 0;
-		cursor: pointer;
-		opacity: 0;
-		z-index: 2;
-
-		-webkit-touch-callout: none;
-	}
+    -webkit-touch-callout: none;
+  }
 }
-
 </style>
