@@ -37,7 +37,7 @@ $c: ".secondary-layout";
 	@include header--padding;
 	flex-flow: column;
 	min-height: 100%;
-	background: url('../../assets/blur-abstract-black-hexagon-mesh-pattern-background_33869-397.jpg');
+	background: url('../../assets/black-hexagon-mesh.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 
