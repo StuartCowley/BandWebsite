@@ -118,6 +118,10 @@ export default {
         .then(
           () => {
             this.$emit("openModal", "success");
+            this.name = "";
+            this.email.value = "";
+            this.phone_number = "";
+            this.message.text = '';
             // @TODO Add a proper logger here
           },
           error => {
