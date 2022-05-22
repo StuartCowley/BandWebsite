@@ -125,7 +125,7 @@ export default {
             // @TODO Add a proper logger here
           },
           error => {
-            console.log("FAILED...", error.text);
+            console.log("FAILED... ", error.text);
           }
         );
     },
