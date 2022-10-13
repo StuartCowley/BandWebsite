@@ -54,12 +54,12 @@
       </div>
     </div>
     <div class="parallax-body__section parallax-body__section--static">
-      <Testimonial :reverse="true" :bgImage="testimonials[8].image">
+      <Testimonial :reverse="true" :bgImage="testimonials[16].image">
         <template v-slot:quote>
-          {{ testimonials[8].copy }}
+          {{ testimonials[16].copy }}
         </template>
         <template v-slot:attribution>
-          - {{ testimonials[8].author }}, {{ testimonials[8].date }}
+          - {{ testimonials[16].author }}, {{ testimonials[8].date }}
         </template>
       </Testimonial>
     </div>
