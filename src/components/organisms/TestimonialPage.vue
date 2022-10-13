@@ -10,7 +10,7 @@
       <template v-slot:content>
         <div
           class="testimonial-page__content-block"
-          v-for="testimonial in testimonials"
+          v-for="testimonial in testimonials.slice().reverse()"
           :key="testimonial.id"
         >
           <BasicTestimonial>
