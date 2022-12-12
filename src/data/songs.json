@@ -231,7 +231,7 @@
   },
   {
     "id": 46,
-    "title": "Don’t Stop Me Now",
+    "title": "Don't Stop Me Now",
     "artist": "Queen"
   },
   {
@@ -376,7 +376,7 @@
   },
   {
     "id": 75,
-    "title": "Friday I’m in Love",
+    "title": "Friday I'm in Love",
     "artist": "The Cure"
   },
   {
@@ -386,7 +386,7 @@
   },
   {
     "id": 77,
-    "title": "Can’t Take My Eyes Off You",
+    "title": "Can't Take My Eyes Off You",
     "artist": "Andy Williams"
   },
   {
@@ -421,12 +421,12 @@
   },
   {
     "id": 84,
-    "title": "Wouldn’t it be Nice",
+    "title": "Wouldn't it be Nice",
     "artist": "The Beach Boys"
   },
   {
     "id": 85,
-    "title": "Hold On I’m Comin",
+    "title": "Hold On I'm Comin",
     "artist": "Sam and Dave"
   },
   {
@@ -508,5 +508,60 @@
     "id": 101,
     "title": "Superstition/Another One Bites the Dust (mashup)",
     "artist": "Stevie Wonder/Queen"
+  },
+  {
+    "id": 102,
+    "title": "Livin La Vida Loca",
+    "artist": "Ricky Martin"
+  },
+  {
+    "id": 103,
+    "title": "Crazy Little Thing Called Love",
+    "artist": "Queen"
+  },
+  {
+    "id": 104,
+    "title": "You're my best friend",
+    "artist": "Queen"
+  },
+  {
+    "id": 105,
+    "title": "Faith",
+    "artist": "George Michael"
+  },
+  {
+    "id": 106,
+    "title": "Aint nobody",
+    "artist": "Chaka Khan"
+  },
+  {
+    "id": 107,
+    "title": "Never Too Much",
+    "artist": "Luthor Vandross"
+  },
+  {
+    "id": 108,
+    "title": "Hold The Line",
+    "artist": "Toto"
+  },
+  {
+    "id": 109,
+    "title": "Jonny B Goode",
+    "artist": "Chuck Berry"
+  },
+  {
+    "id": 110,
+    "title": "Power Of Love",
+    "artist": "Huey Lewis & The News"
+  },
+  {
+    "id": 111,
+    "title": "Sledgehammer",
+    "artist": "Peter Gabriel"
+  },
+  {
+    "id": 112,
+    "title": "Shes Electric",
+    "artist": "Oasis"
   }
 ]
