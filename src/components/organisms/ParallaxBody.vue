@@ -28,12 +28,12 @@
       </div>
     </div>
     <div class="parallax-body__section parallax-body__section--static">
-      <Testimonial :bgImage="testimonials[7].image">
+      <Testimonial :bgImage="testimonials[19].image">
         <template v-slot:quote>
-          {{ testimonials[7].copy }}
+          {{ testimonials[19].copy }}
         </template>
         <template v-slot:attribution>
-          - {{ testimonials[7].author }}, {{ testimonials[7].date }}
+          - {{ testimonials[19].author }}, {{ testimonials[19].date }}
         </template>
       </Testimonial>
     </div>
@@ -59,7 +59,7 @@
           {{ testimonials[16].copy }}
         </template>
         <template v-slot:attribution>
-          - {{ testimonials[16].author }}, {{ testimonials[8].date }}
+          - {{ testimonials[16].author }}, {{ testimonials[16].date }}
         </template>
       </Testimonial>
     </div>
@@ -87,12 +87,12 @@
       </div>
     </div>
     <div class="parallax-body__section parallax-body__section--static">
-      <Testimonial :bgImage="testimonials[9].image">
+      <Testimonial :bgImage="testimonials[14].image">
         <template v-slot:quote>
-          {{ testimonials[9].copy }}
+          {{ testimonials[14].copy }}
         </template>
         <template v-slot:attribution>
-          - {{ testimonials[9].author }}, {{ testimonials[9].date }}
+          - {{ testimonials[14].author }}, {{ testimonials[14].date }}
         </template>
       </Testimonial>
     </div>
