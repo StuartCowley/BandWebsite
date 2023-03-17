@@ -13,9 +13,9 @@
   },
   {
     "id": 2,
-    "copy": "We booked these for a childrens gala and they was fantastic the variety of music was brilliant and suited to all ages would definitely recommend booking would love to have you back again",
-    "author": "Graham K",
-    "date": "2019"
+    "copy": "An amazing band.. and really nice people who give it their all when performing... would recommend them 100%! Brilliant at parties with a mixed age group! (10 / 10)",
+    "author": "Xanthe H",
+    "date": "2018"
   },
   {
     "id": 3,
@@ -25,9 +25,9 @@
   },
   {
     "id": 4,
-    "copy": "An amazing band.. and really nice people who give it their all when performing... would recommend them 100%! Brilliant at parties with a mixed age group! (10 / 10)",
-    "author": "Xanthe H",
-    "date": "2018"
+    "copy": "We booked these for a childrens gala and they were fantastic the variety of music was brilliant and suited to all ages would definitely recommend booking would love to have you back again",
+    "author": "Graham K",
+    "date": "2019"
   },
   {
     "id": 5,
@@ -87,9 +87,10 @@
   },
   {
     "id": 14,
-    "copy": "The Bees Knees absolutely made my 40th! Honestly, such an amazing band! Superb choice of songs. Had everyone up dancing. The lead singer is phenomenal & the band are excellent musicians. Communication up to the event was also excellent. Highly recommend!",
+    "copy": "The Bees Knees absolutely made my 40th! Honestly, such an amazing band! Superb choice of songs. Had everyone up dancing. The lead singer is phenomenal & the band are excellent musicians. Communication up to the event was also excellent. Highly recommended!",
     "author": "Jennifer P",
-    "date": "2021"
+    "date": "2021",
+    "image": "cakes.jpeg"
   },
   {
     "id": 15,
@@ -102,7 +103,7 @@
     "copy":  "We had the Bees Knees play at our wedding reception on the 17th April and they were absolutely fantastic. They played 2 sets of absolute bangers, did not disappoint! Dance floor was full all night.",
     "author": "Tommy and Sophie",
     "date": "2022",
-    "image": "bride-2.jpg"
+    "image": "bride-1.jpg"
   },
   {
     "id": 17,
@@ -115,5 +116,12 @@
     "copy": "Amazing 5 piece band! We booked them for my 40th Birthday. We will definitely be having them again. Not ever choosing a band before I looked at their set list and them performing on YouTube. Speaking to the lead singer she told me I could also request any songs and they could try and practice them before the night. I had requested Jonny B Goode for my dad. They did not disappoint! You pay a bit extra for the saxophone player but it's worth it. The energy was high. Everyone danced the night away and thoroughly enjoyed the night! Thank you again!",
     "author": "Georgina W",
     "date": "2022"
+  },
+  {
+    "id": 19,
+    "copy": "Just wanted to get in touch to say a massive thanks to you all for Saturday night. It was a fabulous night, made especially by you guys, you really were the icing on the cake, and everyone commented on how good you were. Thank you so very much for all the little bits attention to details that you did for mum",
+    "author": "Jackie L",
+    "date": "2023",
+    "image": "crowd.jpg"
   }
 ]
