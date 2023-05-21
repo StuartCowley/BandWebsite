@@ -100,7 +100,7 @@
   },
   {
     "id": 16,
-    "copy":  "We had the Bees Knees play at our wedding reception on the 17th April and they were absolutely fantastic. They played 2 sets of absolute bangers, did not disappoint! Dance floor was full all night.",
+    "copy": "We had the Bees Knees play at our wedding reception on the 17th April and they were absolutely fantastic. They played 2 sets of absolute bangers, did not disappoint! Dance floor was full all night.",
     "author": "Tommy and Sophie",
     "date": "2022",
     "image": "bride-1.jpg"
@@ -119,9 +119,15 @@
   },
   {
     "id": 19,
-    "copy": "Just wanted to get in touch to say a massive thanks to you all for Saturday night. It was a fabulous night, made especially by you guys, you really were the icing on the cake, and everyone commented on how good you were. Thank you so very much for all the little bits attention to details that you did for mum",
+    "copy": "Just wanted to get in touch to say a massive thanks to you all for Saturday night. It was a fabulous night, made especially by you guys, you really were the icing on the cake, and everyone commented on how good you were. Thank you so very much for all the little bits attention to details that you did for mum.",
     "author": "Jackie L",
     "date": "2023",
     "image": "crowd.jpg"
+  },
+  {
+    "id": 20,
+    "copy": "I just wanted to say thank you so much for such an incredible night. We had no idea how amazing your sets were going to be, it really blew us and everyone away. Your range of songs was fantastic and every single one got even the non-dancers up boogeying. We are so glad we hired you guys and will definitely by using you for future events. Thanks for being one of the highlights of our wedding.",
+    "author": "Annabel H",
+    "date": "2023"
   }
 ]
