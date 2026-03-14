@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "src/scss/toolkit";
+@use "src/scss/toolkit" as *;
 $c: ".faq";
 #{$c} {
   margin-bottom: 1rem;

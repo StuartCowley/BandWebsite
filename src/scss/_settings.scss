@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:math";
+
 // Typography -------------------------------------
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
@@ -43,11 +46,11 @@ $palettes: (
 );
 
 @each $palette, $values in $palettes {
-  @if (map-has-key($values, base)) {
+  @if (map.has-key($values, base)) {
     .palette--#{$palette} {
-      color: map-get($values, base);
+      color: map.get($values, base);
       &:hover {
-        color: map-get($values, contrast);
+        color: map.get($values, contrast);
       }
     }
   }
@@ -75,9 +78,9 @@ $breakpoint-mob: 480px;
 // Header =======================
 
 $logo-width: 100px;
-$logo-width-small: $logo-width / 2;
+$logo-width-small: math.div($logo-width, 2);
 $logo-padding: 16px;
-$logo-padding-small: $logo-padding / 2;
+$logo-padding-small: math.div($logo-padding, 2);
 
 $header-height: 80px;
 $header-height-small: 64px;

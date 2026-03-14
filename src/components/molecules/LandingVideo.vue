@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "src/scss/toolkit";
+@use "src/scss/toolkit" as *;
 
 $c: ".landing-video";
 #{$c} {
