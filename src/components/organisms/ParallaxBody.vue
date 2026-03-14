@@ -159,6 +159,7 @@ $c: ".parallax-body";
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: $black;
   @include header--padding;
   perspective: 8px;
 

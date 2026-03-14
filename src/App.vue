@@ -7,7 +7,9 @@
     <template v-else>
       <template v-if="initialised">
         <Header :burgerOpen="burgerOpen" />
-        <router-view />
+        <transition name="page-fade" mode="out-in">
+          <router-view :key="$route.path" />
+        </transition>
         <transition name="fade">
           <div
             class="faded-background"
@@ -112,8 +114,19 @@ a {
   transition: opacity $base-trans-speed * 1.25 ease-in-out;
 }
 
+.page-fade-enter,
+.page-fade-leave-to {
+  opacity: 0;
+}
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
 .page-wrapper {
   position: relative;
+  background: url("~@/assets/black-hexagon-mesh.jpg");
+  background-size: 100%;
 
   .loading {
     width: 100px;
