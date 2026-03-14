@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "/scss/toolkit";
+@use "src/scss/toolkit" as *;
 
 html,
 body {

@@ -1,4 +1,13 @@
 module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        sassOptions: {
+          silenceDeprecations: ["legacy-js-api"]
+        }
+      }
+    }
+  },
   configureWebpack: {
     module: {
       rules: [
