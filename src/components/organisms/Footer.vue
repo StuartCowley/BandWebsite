@@ -18,11 +18,21 @@
           </nav>
         </div>
 
-        <div class="grid__item grid__item--auto ">
+        <div class="grid__item grid__item--auto">
           <div class="footer__logo-wrap">
             <Logo :isLink="true" class="footer__logo" />
             <div class="footer__logo-title">The Bees Knees</div>
             <div class="footer__logo-subtitle">Professional Party Band</div>
+            <a
+              href="https://www.poptop.uk.com/supplier/the-bees-knees/"
+              target="_blank"
+            >
+              <img
+                src="https://www.poptop.uk.com/ranking/the-bees-knees/GoldPoptopFeaturedSupplierRating.png"
+                width="120px"
+                height="120px"
+              />
+            </a>
           </div>
         </div>
 
@@ -55,7 +65,7 @@ export default {
   name: "Footer",
   components: {
     SocialItem,
-    Logo
+    Logo,
   },
   computed: {
     currentYear() {
@@ -63,8 +73,8 @@ export default {
     },
     menuItems() {
       return this.$store.state.menuItems;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -92,8 +102,9 @@ $c: ".footer";
     margin-bottom: 12px;
     &-wrap {
       color: $mainGold;
-      margin-left: auto;
-      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       @media screen and (max-width: $breakpoint-ptab) {
         margin-bottom: 2rem;
       }
@@ -107,6 +118,7 @@ $c: ".footer";
       letter-spacing: 0.4rem;
       text-align: center;
       text-transform: uppercase;
+      margin-bottom: 16px;
     }
   }
   &__nav {

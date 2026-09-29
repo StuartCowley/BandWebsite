@@ -28,12 +28,12 @@
       </div>
     </div>
     <div class="parallax-body__section parallax-body__section--static">
-      <Testimonial :bgImage="testimonials[19].image">
+      <Testimonial :bgImage="testimonials[21].image">
         <template v-slot:quote>
-          {{ testimonials[19].copy }}
+          {{ testimonials[21].copy }}
         </template>
         <template v-slot:attribution>
-          - {{ testimonials[19].author }}, {{ testimonials[19].date }}
+          - {{ testimonials[21].author }}, {{ testimonials[21].date }}
         </template>
       </Testimonial>
     </div>
@@ -129,7 +129,7 @@ export default {
     HeroBanner,
     Footer,
     Panel,
-    Testimonial
+    Testimonial,
   },
   data() {
     return {};
@@ -137,16 +137,16 @@ export default {
   props: {
     burgerOpen: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     testimonials() {
       return TestimonialList;
-    }
+    },
   },
-  created: function() {},
-  methods: {}
+  created: function () {},
+  methods: {},
 };
 </script>
 
