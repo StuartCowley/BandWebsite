@@ -41,8 +41,8 @@
 </template>
 
 <script>
-import LandingVideo from "../molecules/LandingVideo";
-import Logo from "../atoms/Logo";
+import LandingVideo from "../molecules/LandingVideo.vue";
+import Logo from "../atoms/Logo.vue";
 
 export default {
   name: "ParallaxBody",

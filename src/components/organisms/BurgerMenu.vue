@@ -18,12 +18,12 @@
       <div class="burger-menu__socials">
         <SocialItem
           link="https://www.facebook.com/thebeeskneesuk/"
-          :logo="require('../../assets/icon-facebook.svg')"
+          :logo="facebookIcon"
           :linkExternal="true"
         />
         <SocialItem
-          link="contact"
-          :logo="require('../../assets/icon-mail.svg')"
+          link="/contact"
+          :logo="mailIcon"
         />
       </div>
     </div>
@@ -31,14 +31,20 @@
 </template>
 
 <script>
-import SocialItem from "../atoms/SocialItem";
-import Logo from "../atoms/Logo";
+import SocialItem from "../atoms/SocialItem.vue";
+import Logo from "../atoms/Logo.vue";
+import facebookIcon from "../../assets/icon-facebook.svg?raw";
+import mailIcon from "../../assets/icon-mail.svg?raw";
 
 export default {
   name: "BurgerMenu",
   components: {
     Logo,
     SocialItem
+  },
+  emits: ["menuItemClicked"],
+  data() {
+    return { facebookIcon, mailIcon };
   },
   props: {
     navOpen: {

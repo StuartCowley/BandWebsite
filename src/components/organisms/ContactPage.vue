@@ -1,8 +1,8 @@
 <template>
   <div class="contact-page">
     <Modal
-      :display="this.modal.show"
-      :content="this.modal.message"
+      :display="modal.show"
+      :content="modal.message"
       @closeModal="handleModal"
     />
     <SecondaryLayout>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import SecondaryLayout from "./SecondaryLayout";
+import SecondaryLayout from "./SecondaryLayout.vue";
 import ContactForm from "../molecules/ContactForm.vue";
 import Modal from "../molecules/Modal.vue";
 
@@ -34,11 +34,6 @@ export default {
     SecondaryLayout,
     ContactForm,
     Modal
-  },
-  metaInfo: {
-    title: "The Bees Knees - Professional Party Band from Manchester",
-    titleTemplate:
-      "%s | Contact The Band | Get a quote | Check Availability | Ask us anything!"
   },
   data: () => {
     return {

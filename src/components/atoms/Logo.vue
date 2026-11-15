@@ -1,21 +1,29 @@
 <template>
   <div class="logo-wrap">
-    <router-link to="/" :is="isLink ? 'router-link' : 'div'">
-      <div class="logo" v-html="require('../../assets/bee.svg')"></div>
+    <component
+      :is="isLink ? 'router-link' : 'div'"
+      v-bind="isLink ? { to: '/' } : {}"
+    >
+      <div class="logo" v-html="beeSvg"></div>
       <div class="logo-text" v-if="showText">
         <span>The</span>
         <span>Bees Knees</span>
       </div>
-    </router-link>
+    </component>
   </div>
 </template>
 
 <script>
+import beeSvg from "../../assets/bee.svg?raw";
+
 export default {
   name: "Logo",
   props: {
     showText: Boolean,
     isLink: Boolean
+  },
+  data() {
+    return { beeSvg };
   }
 };
 </script>

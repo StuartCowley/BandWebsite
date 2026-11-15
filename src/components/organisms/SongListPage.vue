@@ -32,7 +32,7 @@
               <CTA
                 class="songlist-page__cta"
                 label="Contact us"
-                link="contact"
+                link="/contact"
               />
             </div>
           </div>
@@ -44,16 +44,11 @@
 
 <script>
 import CTA from "../atoms/CTA.vue";
-import SecondaryLayout from "./SecondaryLayout";
+import SecondaryLayout from "./SecondaryLayout.vue";
 import songs from "../../data/songs.json";
 
 export default {
   name: "SongListPage",
-  metaInfo: {
-    title: "The Bees Knees - Professional Party Band from Manchester",
-    titleTemplate:
-      "%s | Our current repertoire | Songs from 1950s - 2020s | Special requests catered for"
-  },
   components: {
     CTA,
     SecondaryLayout

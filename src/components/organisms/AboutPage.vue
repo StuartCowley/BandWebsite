@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import SecondaryLayout from "./SecondaryLayout";
+import SecondaryLayout from "./SecondaryLayout.vue";
 
 export default {
   name: "AboutPage",

@@ -2,50 +2,31 @@
   "name": "the-bees-knees-live",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@emailjs/browser": "^3.3.1",
-    "core-js": "^3.6.5",
-    "sass": "^1.49.8",
-    "vue": "^2.6.11",
-    "vue-meta": "^2.4.0",
-    "vue-mq": "^1.0.1",
-    "vue-router": "^3.5.1",
-    "vuex": "^3.5.1"
+    "@emailjs/browser": "^5.0.3",
+    "vue": "^3.5.45",
+    "vue-router": "^5.5.1",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.4.0",
-    "@vue/cli-plugin-eslint": "^4.4.0",
-    "@vue/cli-service": "^4.4.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "html-loader": "^1.1.0",
-    "sass-loader": "^10.0.0",
-    "vue-svg-loader": "^0.16.0",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-vue": "^6.0.11",
+    "eslint": "^10.15.0",
+    "eslint-plugin-vue": "^10.12.1",
+    "globals": "^17.14.0",
+    "sass": "^1.108.2",
+    "vite": "^8.3.8",
+    "vue-eslint-parser": "^10.4.2"
+  }
 }

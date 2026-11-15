@@ -23,6 +23,7 @@
 <script>
 export default {
   name: "BurgerNavCross",
+  emits: ["clickedBurgerIcon"],
   props: {
     navOpen: {
       type: Boolean,

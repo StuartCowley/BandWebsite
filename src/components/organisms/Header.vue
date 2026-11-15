@@ -50,11 +50,11 @@
             <SocialItem
               link="https://www.facebook.com/thebeeskneesuk"
               :linkExternal="true"
-              :logo="require('../../assets/icon-facebook.svg')"
+              :logo="facebookIcon"
             />
             <SocialItem
-              link="contact"
-              :logo="require('../../assets/icon-mail.svg')"
+              link="/contact"
+              :logo="mailIcon"
             />
           </div>
         </div>
@@ -68,6 +68,8 @@ import SocialItem from "../atoms/SocialItem.vue";
 import BurgerMenu from "./BurgerMenu.vue";
 import BurgerNavCross from "../atoms/BurgerNavCross.vue";
 import Logo from "../atoms/Logo.vue";
+import facebookIcon from "../../assets/icon-facebook.svg?raw";
+import mailIcon from "../../assets/icon-mail.svg?raw";
 
 export default {
   name: "Header",
@@ -76,6 +78,9 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  data() {
+    return { facebookIcon, mailIcon };
   },
   methods: {
     toggleNav() {

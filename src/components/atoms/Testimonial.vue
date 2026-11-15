@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     image() {
-      return require(`../../assets/${this.bgImage}`);
+      return new URL(`../../assets/${this.bgImage}`, import.meta.url).href;
     }
   }
 };

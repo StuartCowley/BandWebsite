@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import FAQ from "../atoms/Faq";
-import SecondaryLayout from "./SecondaryLayout";
+import FAQ from "../atoms/Faq.vue";
+import SecondaryLayout from "./SecondaryLayout.vue";
 
 import FAQList from "../../data/faqs.json";
 
