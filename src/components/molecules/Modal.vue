@@ -23,6 +23,7 @@
 <script>
 export default {
   name: "Modal",
+  emits: ["closeModal"],
   props: {
     display: {
       type: Boolean,

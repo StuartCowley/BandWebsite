@@ -7,9 +7,11 @@
     <template v-else>
       <template v-if="initialised">
         <Header :burgerOpen="burgerOpen" />
-        <transition name="page-fade" mode="out-in">
-          <router-view :key="$route.path" />
-        </transition>
+        <router-view v-slot="{ Component, route }">
+          <transition name="page-fade" mode="out-in">
+            <component :is="Component" :key="route.path" />
+          </transition>
+        </router-view>
         <transition name="fade">
           <div
             class="faded-background"
@@ -20,7 +22,7 @@
       </template>
       <template v-else>
         <div class="loading-wrap">
-          <img class="loading" :src="require('./assets/loading.gif')" />
+          <img class="loading" :src="loadingGif" alt="Loading" />
         </div>
       </template>
     </template>
@@ -29,18 +31,17 @@
 
 <script>
 import Header from "./components/organisms/Header.vue";
-import LandingPage from "./components/organisms/LandingPage";
+import LandingPage from "./components/organisms/LandingPage.vue";
+import loadingGif from "./assets/loading.gif";
 
 export default {
   name: "App",
-  metaInfo: {
-    title: "The Bees Knees - Professional Party Band from Manchester",
-    titleTemplate:
-      "%s | Available for any event across the country | Special requests catered for | Line-up tailored to your needs"
-  },
   components: {
     Header,
     LandingPage
+  },
+  data() {
+    return { loadingGif };
   },
   computed: {
     showLandingPageOnly() {
@@ -57,9 +58,7 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch("showLoadScreen"),
-      (document.title =
-        "The Bees Knees - Professional Cover Band from Manchester");
+    this.$store.dispatch("showLoadScreen");
   },
   mounted: function() {
     this.$store.dispatch("appLoaded");
@@ -105,7 +104,7 @@ a {
   background-color: black;
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
@@ -114,7 +113,7 @@ a {
   transition: opacity $base-trans-speed * 1.25 ease-in-out;
 }
 
-.page-fade-enter,
+.page-fade-enter-from,
 .page-fade-leave-to {
   opacity: 0;
 }
@@ -125,7 +124,7 @@ a {
 
 .page-wrapper {
   position: relative;
-  background: url("~@/assets/black-hexagon-mesh.jpg");
+  background: url("@/assets/black-hexagon-mesh.jpg");
   background-size: 100%;
 
   .loading {

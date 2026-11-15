@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Footer from "./Footer";
+import Footer from "./Footer.vue";
 
 export default {
   name: "SecondaryLayout",

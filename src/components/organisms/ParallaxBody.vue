@@ -116,10 +116,10 @@
 </template>
 
 <script>
-import HeroBanner from "../organisms/HeroBanner";
-import Testimonial from "../atoms/Testimonial";
-import Panel from "../molecules/Panel";
-import Footer from "../organisms/Footer";
+import HeroBanner from "../organisms/HeroBanner.vue";
+import Testimonial from "../atoms/Testimonial.vue";
+import Panel from "../molecules/Panel.vue";
+import Footer from "../organisms/Footer.vue";
 
 import TestimonialList from "../../data/testimonials.json";
 

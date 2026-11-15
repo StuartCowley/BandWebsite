@@ -29,16 +29,12 @@
 
 <script>
 import BasicTestimonial from "../atoms/BasicTestimonial.vue";
-import SecondaryLayout from "./SecondaryLayout";
+import SecondaryLayout from "./SecondaryLayout.vue";
 
 import TestimonialList from "../../data/testimonials.json";
 
 export default {
   name: "TestimonialPage",
-  metaInfo: {
-    title: "The Bees Knees - Professional Party Band from Manchester",
-    titleTemplate: "%s | Reviews from previous clients"
-  },
   components: {
     BasicTestimonial,
     SecondaryLayout

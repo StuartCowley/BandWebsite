@@ -80,6 +80,7 @@ import emailjs from "@emailjs/browser";
 
 export default {
   name: "ContactForm",
+  emits: ["openModal"],
   data: () => {
     return {
       name: "",
@@ -110,10 +111,10 @@ export default {
     sendEmail() {
       emailjs
         .sendForm(
-          process.env.VUE_APP_EMAIL_SERVICE,
-          process.env.VUE_APP_EMAIL_CONTACT,
+          import.meta.env.VUE_APP_EMAIL_SERVICE,
+          import.meta.env.VUE_APP_EMAIL_CONTACT,
           this.$refs.form,
-          process.env.VUE_APP_EMAIL_ID
+          { publicKey: import.meta.env.VUE_APP_EMAIL_ID }
         )
         .then(
           () => {
