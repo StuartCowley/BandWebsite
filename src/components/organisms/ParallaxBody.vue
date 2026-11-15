@@ -28,12 +28,12 @@
       </div>
     </div>
     <div class="parallax-body__section parallax-body__section--static">
-      <Testimonial :bgImage="testimonials[21].image">
+      <Testimonial :bgImage="testimonials[23].image">
         <template v-slot:quote>
-          {{ testimonials[21].copy }}
+          {{ testimonials[23].copy }}
         </template>
         <template v-slot:attribution>
-          - {{ testimonials[21].author }}, {{ testimonials[21].date }}
+          - {{ testimonials[23].author }}, {{ testimonials[23].date }}
         </template>
       </Testimonial>
     </div>

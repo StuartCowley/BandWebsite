@@ -133,13 +133,19 @@
     "id": 21,
     "copy": "The Bees Knees certainly lived up to their name. Awesome band and genuinely lovely people. So accommodating and happy to take requests for songs. Made our wedding a joyful and lively event and got us all dancing away. Great choice of songs covering a wide range of genres and decades. Highly recommend.",
     "author": "Catherine H",
-    "date": "2026",
-    "image": "crowd.jpg"
+    "date": "2026"
   },
   {
     "id": 22,
     "copy": "You were absolutely amazing - what a great band - such buzzing musicians - a must for any event!! I only lost my voice and my legs were wobbly from dancing too much!! Can't wait for my next celebration. Thank you all for making my event soo memorable",
     "author": "Linda A",
     "date": "2026"
+  },
+  {
+    "id": 23,
+    "copy": "I wanted to say a massive thank you, absolutely everyone loved what you did and how you did it. The whole band was completely on it and note perfect and your voice is stunning. We all had an absolute blast, please keep doing what you’re doing:  great range of music, great musicianship, great time had by all. Thank you",
+    "author": "Madeleine M",
+    "date": "2026",
+    "image": "crowd.jpg"
   }
 ]
